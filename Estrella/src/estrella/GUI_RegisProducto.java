@@ -1,22 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package estrella;
 
-/**
- *
- * @author Andres
- */
+import static estrella.Conexion.getConection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 public class GUI_RegisProducto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GUI_Producto
-     */
     public GUI_RegisProducto() {
         initComponents();
     }
+
+    PreparedStatement ps, ps2;
+    ResultSet rs;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,12 +28,12 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         LabelNombProduct = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         FiledNombProd = new javax.swing.JTextField();
-        FieldPrecioCompra = new javax.swing.JTextField();
+        FieldCosto = new javax.swing.JTextField();
         FieldPrecioVenta = new javax.swing.JTextField();
         FieldConcept = new javax.swing.JTextField();
         FieldFechaCadu = new javax.swing.JTextField();
         LabelConcept = new javax.swing.JLabel();
-        LabelPreciComp = new javax.swing.JLabel();
+        LabelCosto = new javax.swing.JLabel();
         LabelPreciVen = new javax.swing.JLabel();
         LabelFechaCadu = new javax.swing.JLabel();
         FondoText1 = new javax.swing.JLabel();
@@ -46,6 +43,18 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FondoText3 = new javax.swing.JLabel();
         FondoText4 = new javax.swing.JLabel();
         FondoText5 = new javax.swing.JLabel();
+        LabelFechaAvisoCadu = new javax.swing.JLabel();
+        FieldAvisoCadu = new javax.swing.JTextField();
+        FondoText6 = new javax.swing.JLabel();
+        FieldCantidad = new javax.swing.JTextField();
+        LabelCantidad = new javax.swing.JLabel();
+        FondoText7 = new javax.swing.JLabel();
+        FieldCategoria = new javax.swing.JTextField();
+        FondoText8 = new javax.swing.JLabel();
+        LabelCategoria = new javax.swing.JLabel();
+        Id = new javax.swing.JTextField();
+        estado = new javax.swing.JTextField();
+        Cponder = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +77,11 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusPainted(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         PanelRegisPro.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
 
         FiledNombProd.setBackground(new java.awt.Color(232, 232, 232));
@@ -76,11 +90,11 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FiledNombProd.setBorder(null);
         PanelRegisPro.add(FiledNombProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 180, -1));
 
-        FieldPrecioCompra.setBackground(new java.awt.Color(232, 232, 232));
-        FieldPrecioCompra.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
-        FieldPrecioCompra.setForeground(new java.awt.Color(51, 51, 51));
-        FieldPrecioCompra.setBorder(null);
-        PanelRegisPro.add(FieldPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 180, -1));
+        FieldCosto.setBackground(new java.awt.Color(232, 232, 232));
+        FieldCosto.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldCosto.setForeground(new java.awt.Color(51, 51, 51));
+        FieldCosto.setBorder(null);
+        PanelRegisPro.add(FieldCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 180, -1));
 
         FieldPrecioVenta.setBackground(new java.awt.Color(232, 232, 232));
         FieldPrecioVenta.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
@@ -105,10 +119,10 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         LabelConcept.setText("Concepto");
         PanelRegisPro.add(LabelConcept, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, -1));
 
-        LabelPreciComp.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
-        LabelPreciComp.setForeground(new java.awt.Color(0, 0, 0));
-        LabelPreciComp.setText("Precio de compra");
-        PanelRegisPro.add(LabelPreciComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        LabelCosto.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        LabelCosto.setForeground(new java.awt.Color(0, 0, 0));
+        LabelCosto.setText("Costo");
+        PanelRegisPro.add(LabelCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         LabelPreciVen.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelPreciVen.setForeground(new java.awt.Color(0, 0, 0));
@@ -143,6 +157,69 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FondoText5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
         PanelRegisPro.add(FondoText5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
 
+        LabelFechaAvisoCadu.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        LabelFechaAvisoCadu.setForeground(new java.awt.Color(0, 0, 0));
+        LabelFechaAvisoCadu.setText("Fecha de aviso de Caducidad");
+        PanelRegisPro.add(LabelFechaAvisoCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+
+        FieldAvisoCadu.setBackground(new java.awt.Color(232, 232, 232));
+        FieldAvisoCadu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldAvisoCadu.setForeground(new java.awt.Color(51, 51, 51));
+        FieldAvisoCadu.setBorder(null);
+        PanelRegisPro.add(FieldAvisoCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 180, -1));
+
+        FondoText6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
+        PanelRegisPro.add(FondoText6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+
+        FieldCantidad.setBackground(new java.awt.Color(232, 232, 232));
+        FieldCantidad.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldCantidad.setForeground(new java.awt.Color(51, 51, 51));
+        FieldCantidad.setBorder(null);
+        PanelRegisPro.add(FieldCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 180, -1));
+
+        LabelCantidad.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        LabelCantidad.setForeground(new java.awt.Color(0, 0, 0));
+        LabelCantidad.setText("Cantidad");
+        PanelRegisPro.add(LabelCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
+
+        FondoText7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
+        PanelRegisPro.add(FondoText7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
+
+        FieldCategoria.setBackground(new java.awt.Color(232, 232, 232));
+        FieldCategoria.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldCategoria.setForeground(new java.awt.Color(51, 51, 51));
+        FieldCategoria.setBorder(null);
+        PanelRegisPro.add(FieldCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 180, -1));
+
+        FondoText8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
+        PanelRegisPro.add(FondoText8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, -1, -1));
+
+        LabelCategoria.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        LabelCategoria.setForeground(new java.awt.Color(0, 0, 0));
+        LabelCategoria.setText("Categoria");
+        PanelRegisPro.add(LabelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
+
+        Id.setBackground(new java.awt.Color(232, 232, 232));
+        Id.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        Id.setForeground(new java.awt.Color(51, 51, 51));
+        Id.setText("id");
+        Id.setBorder(null);
+        PanelRegisPro.add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 180, -1));
+
+        estado.setBackground(new java.awt.Color(232, 232, 232));
+        estado.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        estado.setForeground(new java.awt.Color(51, 51, 51));
+        estado.setText("Activo");
+        estado.setBorder(null);
+        PanelRegisPro.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 180, -1));
+
+        Cponder.setBackground(new java.awt.Color(232, 232, 232));
+        Cponder.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        Cponder.setForeground(new java.awt.Color(51, 51, 51));
+        Cponder.setText("cPonder");
+        Cponder.setBorder(null);
+        PanelRegisPro.add(Cponder, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, 180, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,11 +234,48 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        Connection con = null;
+
+        try {
+
+            con = getConection();
+            ps = con.prepareStatement("INSERT INTO producto(id_producto, nombre_producto, concepto, costo, existencias, costo_ponderado, precio_venta, categoria, estado, Fecha_caducidad, fecha_aviso) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setInt(1, Integer.parseInt(Id.getText()));
+            ps.setString(2, FiledNombProd.getText());
+            ps.setString(3, FieldConcept.getText());
+            ps.setInt(4, Integer.parseInt(FieldCosto.getText()));
+            ps.setInt(5, Integer.parseInt(FieldCantidad.getText()));
+            ps.setInt(6, Integer.parseInt(Cponder.getText()));
+            ps.setInt(7, Integer.parseInt(FieldPrecioVenta.getText()));
+            ps.setString(8, FieldCategoria.getText());
+            ps.setString(9, estado.getText());
+            ps.setString(10, FieldFechaCadu.getText());
+            ps.setString(11, FieldAvisoCadu.getText());
+
+            int res = ps.executeUpdate();
+
+
+            if (res > 0) {
+                JOptionPane.showMessageDialog(null, "Producto Guardado");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al Guardar Producto");
+                System.out.println("Error al Guardar Producto");
+            }
+
+            con.close();
+
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         GUI_RegisProducto ventanaRegisProd = new GUI_RegisProducto();
         ventanaRegisProd.setBounds(0, 0, 1050, 600);
         ventanaRegisProd.setVisible(true);
@@ -169,15 +283,19 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         ventanaRegisProd.setLocationRelativeTo(null);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              //  new GUI_Producto().setVisible(true);
+                //  new GUI_Producto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Cponder;
+    private javax.swing.JTextField FieldAvisoCadu;
+    private javax.swing.JTextField FieldCantidad;
+    private javax.swing.JTextField FieldCategoria;
     private javax.swing.JTextField FieldConcept;
+    private javax.swing.JTextField FieldCosto;
     private javax.swing.JTextField FieldFechaCadu;
-    private javax.swing.JTextField FieldPrecioCompra;
     private javax.swing.JTextField FieldPrecioVenta;
     private javax.swing.JTextField FiledNombProd;
     private javax.swing.JLabel FondoText1;
@@ -185,14 +303,22 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
     private javax.swing.JLabel FondoText3;
     private javax.swing.JLabel FondoText4;
     private javax.swing.JLabel FondoText5;
+    private javax.swing.JLabel FondoText6;
+    private javax.swing.JLabel FondoText7;
+    private javax.swing.JLabel FondoText8;
+    private javax.swing.JTextField Id;
+    private javax.swing.JLabel LabelCantidad;
+    private javax.swing.JLabel LabelCategoria;
     private javax.swing.JLabel LabelConcept;
+    private javax.swing.JLabel LabelCosto;
+    private javax.swing.JLabel LabelFechaAvisoCadu;
     private javax.swing.JLabel LabelFechaCadu;
     private javax.swing.JLabel LabelNombProduct;
-    private javax.swing.JLabel LabelPreciComp;
     private javax.swing.JLabel LabelPreciVen;
     private javax.swing.JLabel LineaDivisora;
     public static javax.swing.JPanel PanelRegisPro;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JTextField estado;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,9 @@
  */
 package estrella;
 
+import static estrella.GUI_PanelHome.PanelCentralHome;
+import static estrella.GUI_Producto.PanelProduct;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -98,6 +101,11 @@ public class GUIHome extends javax.swing.JFrame {
                 HomeBTNMousePressed(evt);
             }
         });
+        HomeBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomeBTNActionPerformed(evt);
+            }
+        });
         PanelPrincipal.add(HomeBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 200, -1, -1));
 
         ClientesBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnClienWH.png"))); // NOI18N
@@ -154,22 +162,19 @@ public class GUIHome extends javax.swing.JFrame {
         PanelPrincipal.add(BarraLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 28, -1, -1));
 
         PanelCentral.setBackground(new java.awt.Color(248, 248, 248));
-        PanelCentral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelCentral.setPreferredSize(new java.awt.Dimension(1050, 600));
 
         NombreEmpresa.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         NombreEmpresa.setForeground(new java.awt.Color(0, 0, 0));
         NombreEmpresa.setText("La Estrella");
-        PanelCentral.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         SubtitleEmpresa.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         SubtitleEmpresa.setForeground(new java.awt.Color(0, 0, 0));
         SubtitleEmpresa.setText("Variedades");
-        PanelCentral.add(SubtitleEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         TituloSeccionSuperior.setFont(new java.awt.Font("Microsoft JhengHei", 0, 21)); // NOI18N
         TituloSeccionSuperior.setForeground(new java.awt.Color(0, 0, 0));
         TituloSeccionSuperior.setText("¿Que desea hacer?");
-        PanelCentral.add(TituloSeccionSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         BtnVerProduct.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         BtnVerProduct.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +185,11 @@ public class GUIHome extends javax.swing.JFrame {
         BtnVerProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnVerProduct.setFocusPainted(false);
         BtnVerProduct.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        PanelCentral.add(BtnVerProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 180, 80));
+        BtnVerProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerProductActionPerformed(evt);
+            }
+        });
 
         BtnVerClientes.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         BtnVerClientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,20 +200,16 @@ public class GUIHome extends javax.swing.JFrame {
         BtnVerClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnVerClientes.setFocusPainted(false);
         BtnVerClientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        PanelCentral.add(BtnVerClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 170, 80));
 
         MiniRecatanguloSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MiniRectangulo.png"))); // NOI18N
-        PanelCentral.add(MiniRecatanguloSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         TituloSeccionInferior.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         TituloSeccionInferior.setForeground(new java.awt.Color(0, 0, 0));
         TituloSeccionInferior.setText("Caja y Reportes");
-        PanelCentral.add(TituloSeccionInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
 
         TituloSeccionInferior2.setFont(new java.awt.Font("Microsoft JhengHei", 0, 21)); // NOI18N
         TituloSeccionInferior2.setForeground(new java.awt.Color(0, 0, 0));
         TituloSeccionInferior2.setText("¿Que desea hacer?");
-        PanelCentral.add(TituloSeccionInferior2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
 
         BtnRegisVent.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         BtnRegisVent.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,7 +220,6 @@ public class GUIHome extends javax.swing.JFrame {
         BtnRegisVent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnRegisVent.setFocusPainted(false);
         BtnRegisVent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        PanelCentral.add(BtnRegisVent, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 180, 80));
 
         BtnRegisRepor.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         BtnRegisRepor.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,13 +230,85 @@ public class GUIHome extends javax.swing.JFrame {
         BtnRegisRepor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnRegisRepor.setFocusPainted(false);
         BtnRegisRepor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        PanelCentral.add(BtnRegisRepor, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 170, 80));
 
         MiniRecatanguloInferior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MiniRectangulo.png"))); // NOI18N
-        PanelCentral.add(MiniRecatanguloInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         ImagenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ImageHome.png"))); // NOI18N
-        PanelCentral.add(ImagenHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, -1, -1));
+
+        javax.swing.GroupLayout PanelCentralLayout = new javax.swing.GroupLayout(PanelCentral);
+        PanelCentral.setLayout(PanelCentralLayout);
+        PanelCentralLayout.setHorizontalGroup(
+            PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCentralLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SubtitleEmpresa)
+                            .addComponent(TituloSeccionSuperior)
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(BtnVerProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtnVerClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(NombreEmpresa))
+                    .addComponent(MiniRecatanguloSuperior)
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(BtnRegisRepor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(TituloSeccionInferior2))
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(BtnRegisVent, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MiniRecatanguloInferior)
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(TituloSeccionInferior)))
+                .addGap(13, 13, 13)
+                .addComponent(ImagenHome))
+        );
+        PanelCentralLayout.setVerticalGroup(
+            PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCentralLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCentralLayout.createSequentialGroup()
+                        .addGroup(PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(SubtitleEmpresa)
+                                .addGap(20, 20, 20)
+                                .addComponent(TituloSeccionSuperior)
+                                .addGap(31, 31, 31)
+                                .addComponent(BtnVerProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(BtnVerClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(NombreEmpresa))
+                            .addComponent(MiniRecatanguloSuperior))
+                        .addGap(46, 46, 46)
+                        .addGroup(PanelCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(BtnRegisRepor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(TituloSeccionInferior2))
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(BtnRegisVent, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MiniRecatanguloInferior)
+                            .addGroup(PanelCentralLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(TituloSeccionInferior))))
+                    .addComponent(ImagenHome)))
+        );
 
         PanelPrincipal.add(PanelCentral, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 1050, 600));
 
@@ -305,6 +381,30 @@ public class GUIHome extends javax.swing.JFrame {
         AjusBTN.setIcon(iconobtn5);
     }//GEN-LAST:event_AjusBTNMousePressed
 
+    private void BtnVerProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerProductActionPerformed
+
+        GUI_Producto ventanaProd = new GUI_Producto();
+        ventanaProd.setSize(780, 570);
+        ventanaProd.setLocation(30,60);
+        
+        PanelCentral.removeAll();
+        PanelCentral.add(PanelProduct, BorderLayout.CENTER);
+        PanelCentral.revalidate();
+        PanelCentral.repaint();
+    }//GEN-LAST:event_BtnVerProductActionPerformed
+
+    private void HomeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBTNActionPerformed
+
+        GUI_PanelHome ventanaPanelHome = new GUI_PanelHome();
+        ventanaPanelHome.setSize(1050, 600);
+        ventanaPanelHome.setLocation(0,0);
+        
+        PanelCentral.removeAll();
+        PanelCentral.add(PanelCentralHome, BorderLayout.CENTER);
+        PanelCentral.revalidate();
+        PanelCentral.repaint();
+    }//GEN-LAST:event_HomeBTNActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -367,8 +467,6 @@ public class GUIHome extends javax.swing.JFrame {
     private javax.swing.JLabel TituloSeccionInferior;
     private javax.swing.JLabel TituloSeccionInferior2;
     private javax.swing.JLabel TituloSeccionSuperior;
-    private javax.swing.JButton botonX;
-    private javax.swing.JButton botonX1;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
