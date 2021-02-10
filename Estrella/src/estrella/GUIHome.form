@@ -217,38 +217,46 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TituloSeccionSuperior" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                                      <Component id="BtnVerProduct" min="-2" pref="180" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="BtnVerClientes" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
+                              <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="TituloSeccionSuperior" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="220" pref="220" max="-2" attributes="0"/>
+                              <Component id="BtnVerClientes" min="-2" pref="170" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                              <Component id="BtnVerProduct" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
                           <Component id="MiniRecatanguloSuperior" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                              <Component id="BtnRegisComp" min="-2" pref="180" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="220" pref="220" max="-2" attributes="0"/>
                               <Component id="BtnRegisRepor" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
                               <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                               <Component id="BtnRegisVent" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="MiniRecatanguloInferior" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
                               <Component id="TituloSeccionInferior" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="MiniRecatanguloInferior" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
                       <Component id="ImagenHome" min="-2" max="-2" attributes="0"/>
@@ -263,42 +271,50 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                      <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                                       <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
                                       <Component id="TituloSeccionSuperior" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
-                                      <Component id="BtnVerProduct" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
                                       <Component id="BtnVerClientes" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
+                                      <Component id="BtnVerProduct" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="MiniRecatanguloSuperior" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
-                                      <Component id="BtnRegisRepor" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                                      <Component id="BtnRegisComp" min="-2" pref="70" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                                      <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
+                                      <Component id="BtnRegisRepor" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
                                       <Component id="BtnRegisVent" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="MiniRecatanguloInferior" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                       <Component id="TituloSeccionInferior" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                      <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="MiniRecatanguloInferior" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="ImagenHome" min="-2" max="-2" attributes="0"/>
@@ -435,6 +451,9 @@
                 <Property name="focusPainted" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegisVentActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BtnRegisRepor">
               <Properties>
@@ -448,6 +467,27 @@
                   <Image iconType="3" name="/Images/BTN_Azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Reporte"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor de Mano"/>
+                </Property>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="BtnRegisComp">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft JhengHei" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/BTN_Azul.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Registrar Compra"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">

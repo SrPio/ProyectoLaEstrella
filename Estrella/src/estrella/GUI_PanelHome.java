@@ -6,7 +6,9 @@
 package estrella;
 
 import static estrella.GUI_Producto.PanelProduct;
+import static estrella.GUI_RegisVenta.PanelRegisVent;
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,8 +43,9 @@ public class GUI_PanelHome extends javax.swing.JFrame {
         TituloSeccionInferior2 = new javax.swing.JLabel();
         BtnRegisVent = new javax.swing.JButton();
         BtnRegisRepor = new javax.swing.JButton();
-        MiniRecatanguloInferior = new javax.swing.JLabel();
+        BtnRegisComp = new javax.swing.JButton();
         ImagenHome = new javax.swing.JLabel();
+        MiniRecatanguloInferior = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +108,11 @@ public class GUI_PanelHome extends javax.swing.JFrame {
         BtnRegisVent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnRegisVent.setFocusPainted(false);
         BtnRegisVent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnRegisVent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRegisVentActionPerformed(evt);
+            }
+        });
 
         BtnRegisRepor.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         BtnRegisRepor.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,9 +124,19 @@ public class GUI_PanelHome extends javax.swing.JFrame {
         BtnRegisRepor.setFocusPainted(false);
         BtnRegisRepor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        MiniRecatanguloInferior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MiniRectangulo.png"))); // NOI18N
+        BtnRegisComp.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        BtnRegisComp.setForeground(new java.awt.Color(255, 255, 255));
+        BtnRegisComp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BTN_Azul.png"))); // NOI18N
+        BtnRegisComp.setText("Registrar Compra");
+        BtnRegisComp.setBorderPainted(false);
+        BtnRegisComp.setContentAreaFilled(false);
+        BtnRegisComp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnRegisComp.setFocusPainted(false);
+        BtnRegisComp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         ImagenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ImageHome.png"))); // NOI18N
+
+        MiniRecatanguloInferior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MiniRectangulo.png"))); // NOI18N
 
         javax.swing.GroupLayout PanelCentralHomeLayout = new javax.swing.GroupLayout(PanelCentralHome);
         PanelCentralHome.setLayout(PanelCentralHomeLayout);
@@ -141,18 +159,21 @@ public class GUI_PanelHome extends javax.swing.JFrame {
                         .addComponent(NombreEmpresa))
                     .addComponent(MiniRecatanguloSuperior)
                     .addGroup(PanelCentralHomeLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(BtnRegisComp, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCentralHomeLayout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(BtnRegisRepor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCentralHomeLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(TituloSeccionInferior))
                     .addGroup(PanelCentralHomeLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(TituloSeccionInferior2))
                     .addGroup(PanelCentralHomeLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(BtnRegisVent, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(MiniRecatanguloInferior)
-                    .addGroup(PanelCentralHomeLayout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(TituloSeccionInferior)))
+                    .addComponent(MiniRecatanguloInferior))
                 .addGap(13, 13, 13)
                 .addComponent(ImagenHome))
         );
@@ -180,18 +201,21 @@ public class GUI_PanelHome extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(PanelCentralHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelCentralHomeLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(BtnRegisComp, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelCentralHomeLayout.createSequentialGroup()
                                 .addGap(140, 140, 140)
                                 .addComponent(BtnRegisRepor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelCentralHomeLayout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(10, 10, 10)
+                                .addComponent(TituloSeccionInferior))
+                            .addGroup(PanelCentralHomeLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
                                 .addComponent(TituloSeccionInferior2))
                             .addGroup(PanelCentralHomeLayout.createSequentialGroup()
                                 .addGap(140, 140, 140)
                                 .addComponent(BtnRegisVent, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(MiniRecatanguloInferior)
-                            .addGroup(PanelCentralHomeLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(TituloSeccionInferior))))
+                            .addComponent(MiniRecatanguloInferior)))
                     .addComponent(ImagenHome)))
         );
 
@@ -217,7 +241,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
 
         GUI_Producto ventanaProd = new GUI_Producto();
         ventanaProd.setSize(780, 570);
-        ventanaProd.setLocation(30,60);
+        ventanaProd.setLocation(30, 60);
 
         PanelCentralHome.removeAll();
         PanelCentralHome.add(PanelProduct, BorderLayout.CENTER);
@@ -225,11 +249,61 @@ public class GUI_PanelHome extends javax.swing.JFrame {
         PanelCentralHome.repaint();
     }//GEN-LAST:event_BtnVerProductActionPerformed
 
+    private void BtnRegisVentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisVentActionPerformed
+
+        int seleccion = JOptionPane.showOptionDialog(
+                null,
+                "¿El cliente paga de contado o fia?",
+                "Condicion de venta",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null, // null para icono por defecto.
+                new Object[]{"Contado", "Fia"}, // null para YES, NO y CANCEL
+                "opcion 1");
+
+        if (seleccion == 0)
+            System.out.println("Contado");
+        else {
+            System.out.println("Fia");
+
+            int seleccion2 = JOptionPane.showOptionDialog(
+                    null,
+                    "¿El cliente está registrado?",
+                    "Condicion de venta",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, // null para icono por defecto.
+                    new Object[]{"Sí", "No", "No lo sé"}, // null para YES, NO y CANCEL
+                    "opcion 1");
+
+            System.out.println(seleccion2);
+
+            if (seleccion2 == 0) {
+                System.out.println("Sí");
+
+                GUI_RegisVenta ventanaRegisVenta = new GUI_RegisVenta();
+                ventanaRegisVenta.setSize(780, 570);
+                ventanaRegisVenta.setLocation(30, 60);
+
+                PanelCentralHome.removeAll();
+                PanelCentralHome.add(PanelRegisVent, BorderLayout.CENTER);
+                PanelCentralHome.revalidate();
+                PanelCentralHome.repaint();
+            }
+            if (seleccion2 == 1) {
+                System.out.println("No");
+            }
+            if (seleccion2 == 2) {
+                System.out.println("No lo sé"); //Luego lo redirecciona a la pantalla de consultar cliente
+            }
+        }
+    }//GEN-LAST:event_BtnRegisVentActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         GUI_PanelHome ventanaPanelHome = new GUI_PanelHome();
         ventanaPanelHome.setBounds(0, 0, 1050, 600);
         ventanaPanelHome.setVisible(true);
@@ -237,12 +311,13 @@ public class GUI_PanelHome extends javax.swing.JFrame {
         ventanaPanelHome.setLocationRelativeTo(null);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              //  new GUI_Producto().setVisible(true);
+                //  new GUI_Producto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnRegisComp;
     private javax.swing.JButton BtnRegisRepor;
     private javax.swing.JButton BtnRegisVent;
     private javax.swing.JButton BtnVerClientes;

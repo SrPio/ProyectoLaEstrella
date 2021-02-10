@@ -216,7 +216,7 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         Cponder.setBackground(new java.awt.Color(232, 232, 232));
         Cponder.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         Cponder.setForeground(new java.awt.Color(51, 51, 51));
-        Cponder.setText("cPonder");
+        Cponder.setText("0");
         Cponder.setBorder(null);
         PanelRegisPro.add(Cponder, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, 180, -1));
 
@@ -236,6 +236,9 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        //Funcion Costo promedio Ponderado
+        
+        
         Connection con = null;
 
         try {
