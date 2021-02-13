@@ -5,11 +5,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class GUI_ConsulProd extends javax.swing.JFrame {
 
     public static String campo = "";
+    public static String Id_guardado = "";
 
     public GUI_ConsulProd() {
         initComponents();
@@ -28,18 +30,20 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelConsulPro = new javax.swing.JPanel();
-        BtnRegisVent = new javax.swing.JButton();
+        BtnModifiProd = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
         LineaDivisora = new javax.swing.JLabel();
+        BtnBuscarProd = new javax.swing.JButton();
         BuscarProdu = new javax.swing.JTextField();
         FondoText10 = new javax.swing.JLabel();
         LabelBusqueda = new javax.swing.JLabel();
-        BtnBuscarProd = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         comboBusqueda = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableProducto = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        BtnDescontinuar = new javax.swing.JButton();
+        CampoGuarda_IdProd = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,22 +51,22 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
         PanelConsulPro.setPreferredSize(new java.awt.Dimension(1050, 600));
         PanelConsulPro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BtnRegisVent.setBackground(new java.awt.Color(248, 248, 248));
-        BtnRegisVent.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
-        BtnRegisVent.setForeground(new java.awt.Color(255, 255, 255));
-        BtnRegisVent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_morado2.png"))); // NOI18N
-        BtnRegisVent.setText("Registrar");
-        BtnRegisVent.setBorderPainted(false);
-        BtnRegisVent.setContentAreaFilled(false);
-        BtnRegisVent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnRegisVent.setFocusPainted(false);
-        BtnRegisVent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BtnRegisVent.addActionListener(new java.awt.event.ActionListener() {
+        BtnModifiProd.setBackground(new java.awt.Color(248, 248, 248));
+        BtnModifiProd.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        BtnModifiProd.setForeground(new java.awt.Color(255, 255, 255));
+        BtnModifiProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_morado2.png"))); // NOI18N
+        BtnModifiProd.setText("Modificar");
+        BtnModifiProd.setBorderPainted(false);
+        BtnModifiProd.setContentAreaFilled(false);
+        BtnModifiProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnModifiProd.setFocusPainted(false);
+        BtnModifiProd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnModifiProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnRegisVentActionPerformed(evt);
+                BtnModifiProdActionPerformed(evt);
             }
         });
-        PanelConsulPro.add(BtnRegisVent, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
+        PanelConsulPro.add(BtnModifiProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
 
         Titulo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 30)); // NOI18N
         Titulo.setForeground(new java.awt.Color(0, 0, 0));
@@ -72,27 +76,31 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
         LineaDivisora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Linea001.png"))); // NOI18N
         PanelConsulPro.add(LineaDivisora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 870, 20));
 
+        BtnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_Buscar.png"))); // NOI18N
+        BtnBuscarProd.setBorderPainted(false);
+        BtnBuscarProd.setContentAreaFilled(false);
+        BtnBuscarProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnBuscarProd.setFocusPainted(false);
+        BtnBuscarProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarProdActionPerformed(evt);
+            }
+        });
+        PanelConsulPro.add(BtnBuscarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+
         BuscarProdu.setBackground(new java.awt.Color(232, 232, 232));
         BuscarProdu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         BuscarProdu.setForeground(new java.awt.Color(51, 51, 51));
         BuscarProdu.setBorder(null);
-        PanelConsulPro.add(BuscarProdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 180, -1));
+        PanelConsulPro.add(BuscarProdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 170, -1));
 
-        FondoText10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
+        FondoText10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Search Bar.png"))); // NOI18N
         PanelConsulPro.add(FondoText10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         LabelBusqueda.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelBusqueda.setForeground(new java.awt.Color(0, 0, 0));
         LabelBusqueda.setText("Buscar:");
         PanelConsulPro.add(LabelBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
-
-        BtnBuscarProd.setText("Buscar");
-        BtnBuscarProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnBuscarProdActionPerformed(evt);
-            }
-        });
-        PanelConsulPro.add(BtnBuscarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -123,6 +131,11 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        tableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableProductoMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tableProducto);
 
         PanelConsulPro.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 880, 250));
@@ -131,6 +144,31 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("SI DESEA VER TODOS LOS DATOS REGISTRADOS, DEJE LA BARRA DE BUSQUEDA EN BLANCO.");
         PanelConsulPro.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+
+        BtnDescontinuar.setBackground(new java.awt.Color(248, 248, 248));
+        BtnDescontinuar.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        BtnDescontinuar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnDescontinuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_morado2.png"))); // NOI18N
+        BtnDescontinuar.setText("Descontinuar");
+        BtnDescontinuar.setBorderPainted(false);
+        BtnDescontinuar.setContentAreaFilled(false);
+        BtnDescontinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnDescontinuar.setFocusPainted(false);
+        BtnDescontinuar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnDescontinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDescontinuarActionPerformed(evt);
+            }
+        });
+        PanelConsulPro.add(BtnDescontinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 250, 90));
+
+        CampoGuarda_IdProd.setEditable(false);
+        CampoGuarda_IdProd.setBackground(new java.awt.Color(232, 232, 232));
+        CampoGuarda_IdProd.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        CampoGuarda_IdProd.setForeground(new java.awt.Color(51, 51, 51));
+        CampoGuarda_IdProd.setText("0");
+        CampoGuarda_IdProd.setBorder(null);
+        PanelConsulPro.add(CampoGuarda_IdProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,9 +184,9 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnRegisVentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisVentActionPerformed
+    private void BtnModifiProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModifiProdActionPerformed
 
-    }//GEN-LAST:event_BtnRegisVentActionPerformed
+    }//GEN-LAST:event_BtnModifiProdActionPerformed
 
     private void BtnBuscarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarProdActionPerformed
 
@@ -207,7 +245,8 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
                 System.err.println(ex.toString());
             }
             System.out.println(where);
-        } /*else if ((comboBusqueda.getSelectedItem().toString()).equals("Codigo")) {
+        }
+        /*else if ((comboBusqueda.getSelectedItem().toString()).equals("Codigo")) {
             campo = BuscarProdu.getText();
             String where = "";
             if (!"".equals(campo)) {
@@ -268,6 +307,52 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBusquedaActionPerformed
 
+    private void BtnDescontinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDescontinuarActionPerformed
+
+        Connection con = null;
+        //Id_guardado = CampoGuarda_IdProd.getText();
+       // System.out.println(Id_guardado);
+
+        if (CampoGuarda_IdProd.getText().equals("0")) {
+
+            System.out.println("Entré");
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una casilla de la tabla");
+
+        } else {
+            Id_guardado = CampoGuarda_IdProd.getText();
+            String where = "";
+            if (!"".equals(Id_guardado)) {
+                where = "WHERE id_producto = '" + Id_guardado + "'";
+            }
+
+            try {
+
+                con = getConection();
+                ps = con.prepareStatement("UPDATE producto SET estado = 'Descontinuado'" + where);
+
+                int res = ps.executeUpdate();
+
+                if (res > 0) {
+                    JOptionPane.showMessageDialog(null, "Se descontinuó el producto");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al descontinuar el producto");
+                    //  System.out.println("Error al Guardar Producto");
+                }
+
+                con.close();
+
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        }
+    }//GEN-LAST:event_BtnDescontinuarActionPerformed
+
+    private void tableProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProductoMouseClicked
+
+        int selection = tableProducto.rowAtPoint(evt.getPoint());
+        CampoGuarda_IdProd.setText(String.valueOf(tableProducto.getValueAt(selection, 0)));
+    }//GEN-LAST:event_tableProductoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -287,8 +372,10 @@ public class GUI_ConsulProd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarProd;
-    private javax.swing.JButton BtnRegisVent;
+    private javax.swing.JButton BtnDescontinuar;
+    private javax.swing.JButton BtnModifiProd;
     private javax.swing.JTextField BuscarProdu;
+    private javax.swing.JTextField CampoGuarda_IdProd;
     private javax.swing.JLabel FondoText10;
     private javax.swing.JLabel LabelBusqueda;
     private javax.swing.JLabel LineaDivisora;

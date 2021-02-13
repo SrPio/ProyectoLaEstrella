@@ -12,6 +12,8 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         initComponents();
     }
 
+    String fechaCaduci, fechaAviso;
+
     PreparedStatement ps, ps2;
     ResultSet rs;
 
@@ -31,7 +33,6 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FieldCosto = new javax.swing.JTextField();
         FieldPrecioVenta = new javax.swing.JTextField();
         FieldConcept = new javax.swing.JTextField();
-        FieldFechaCadu = new javax.swing.JTextField();
         LabelConcept = new javax.swing.JLabel();
         LabelCosto = new javax.swing.JLabel();
         LabelPreciVen = new javax.swing.JLabel();
@@ -42,10 +43,7 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FondoText2 = new javax.swing.JLabel();
         FondoText3 = new javax.swing.JLabel();
         FondoText4 = new javax.swing.JLabel();
-        FondoText5 = new javax.swing.JLabel();
         LabelFechaAvisoCadu = new javax.swing.JLabel();
-        FieldAvisoCadu = new javax.swing.JTextField();
-        FondoText6 = new javax.swing.JLabel();
         FieldCantidad = new javax.swing.JTextField();
         LabelCantidad = new javax.swing.JLabel();
         FondoText7 = new javax.swing.JLabel();
@@ -55,6 +53,14 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         Id = new javax.swing.JTextField();
         estado = new javax.swing.JTextField();
         Cponder = new javax.swing.JTextField();
+        FieldFechaDia = new javax.swing.JTextField();
+        FieldFechaMes = new javax.swing.JTextField();
+        FieldFechaAño = new javax.swing.JTextField();
+        LabelD_M_A = new javax.swing.JLabel();
+        FieldFechaDiaAviso = new javax.swing.JTextField();
+        FieldFechaMesAviso = new javax.swing.JTextField();
+        FieldFechaAñoAviso = new javax.swing.JTextField();
+        LabelD_M_A1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,12 +114,6 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FieldConcept.setBorder(null);
         PanelRegisPro.add(FieldConcept, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 180, -1));
 
-        FieldFechaCadu.setBackground(new java.awt.Color(232, 232, 232));
-        FieldFechaCadu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
-        FieldFechaCadu.setForeground(new java.awt.Color(51, 51, 51));
-        FieldFechaCadu.setBorder(null);
-        PanelRegisPro.add(FieldFechaCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 180, -1));
-
         LabelConcept.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelConcept.setForeground(new java.awt.Color(0, 0, 0));
         LabelConcept.setText("Concepto");
@@ -132,7 +132,7 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         LabelFechaCadu.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelFechaCadu.setForeground(new java.awt.Color(0, 0, 0));
         LabelFechaCadu.setText("Fecha de Caducidad");
-        PanelRegisPro.add(LabelFechaCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+        PanelRegisPro.add(LabelFechaCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, -1, -1));
 
         FondoText1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
         PanelRegisPro.add(FondoText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
@@ -154,22 +154,10 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         FondoText4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
         PanelRegisPro.add(FondoText4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
-        FondoText5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
-
         LabelFechaAvisoCadu.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelFechaAvisoCadu.setForeground(new java.awt.Color(0, 0, 0));
         LabelFechaAvisoCadu.setText("Fecha de aviso de Caducidad");
         PanelRegisPro.add(LabelFechaAvisoCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
-
-        FieldAvisoCadu.setBackground(new java.awt.Color(232, 232, 232));
-        FieldAvisoCadu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
-        FieldAvisoCadu.setForeground(new java.awt.Color(51, 51, 51));
-        FieldAvisoCadu.setBorder(null);
-        PanelRegisPro.add(FieldAvisoCadu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 180, -1));
-
-        FondoText6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
         FieldCantidad.setBackground(new java.awt.Color(232, 232, 232));
         FieldCantidad.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
@@ -220,6 +208,52 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
         Cponder.setBorder(null);
         PanelRegisPro.add(Cponder, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, 180, -1));
 
+        FieldFechaDia.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaDia.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaDia.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaDia.setBorder(null);
+        PanelRegisPro.add(FieldFechaDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 30, -1));
+
+        FieldFechaMes.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaMes.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaMes.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaMes.setBorder(null);
+        PanelRegisPro.add(FieldFechaMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 30, -1));
+
+        FieldFechaAño.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaAño.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaAño.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaAño.setBorder(null);
+        PanelRegisPro.add(FieldFechaAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 50, -1));
+
+        LabelD_M_A.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        LabelD_M_A.setForeground(new java.awt.Color(0, 0, 0));
+        LabelD_M_A.setText("dd - mm - aaa");
+        PanelRegisPro.add(LabelD_M_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
+
+        FieldFechaDiaAviso.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaDiaAviso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaDiaAviso.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaDiaAviso.setBorder(null);
+        PanelRegisPro.add(FieldFechaDiaAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 30, -1));
+
+        FieldFechaMesAviso.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaMesAviso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaMesAviso.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaMesAviso.setBorder(null);
+        PanelRegisPro.add(FieldFechaMesAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 30, -1));
+
+        FieldFechaAñoAviso.setBackground(new java.awt.Color(232, 232, 232));
+        FieldFechaAñoAviso.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        FieldFechaAñoAviso.setForeground(new java.awt.Color(51, 51, 51));
+        FieldFechaAñoAviso.setBorder(null);
+        PanelRegisPro.add(FieldFechaAñoAviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 50, -1));
+
+        LabelD_M_A1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        LabelD_M_A1.setForeground(new java.awt.Color(0, 0, 0));
+        LabelD_M_A1.setText("dd - mm - aaa");
+        PanelRegisPro.add(LabelD_M_A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -236,9 +270,9 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        //Funcion Costo promedio Ponderado
-        
-        
+        fechaCaduci = (FieldFechaDia.getText() + " - " + FieldFechaMes.getText() + " - " + FieldFechaAño.getText());
+        fechaAviso = (FieldFechaDiaAviso.getText() + " - " + FieldFechaMesAviso.getText() + " - " + FieldFechaAñoAviso.getText());
+
         Connection con = null;
 
         try {
@@ -254,11 +288,10 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
             ps.setInt(7, Integer.parseInt(FieldPrecioVenta.getText()));
             ps.setString(8, FieldCategoria.getText());
             ps.setString(9, estado.getText());
-            ps.setString(10, FieldFechaCadu.getText());
-            ps.setString(11, FieldAvisoCadu.getText());
+            ps.setString(10, fechaCaduci);
+            ps.setString(11, fechaAviso);
 
             int res = ps.executeUpdate();
-
 
             if (res > 0) {
                 JOptionPane.showMessageDialog(null, "Producto Guardado");
@@ -293,20 +326,22 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cponder;
-    private javax.swing.JTextField FieldAvisoCadu;
     private javax.swing.JTextField FieldCantidad;
     private javax.swing.JTextField FieldCategoria;
     private javax.swing.JTextField FieldConcept;
     private javax.swing.JTextField FieldCosto;
-    private javax.swing.JTextField FieldFechaCadu;
+    private javax.swing.JTextField FieldFechaAño;
+    private javax.swing.JTextField FieldFechaAñoAviso;
+    private javax.swing.JTextField FieldFechaDia;
+    private javax.swing.JTextField FieldFechaDiaAviso;
+    private javax.swing.JTextField FieldFechaMes;
+    private javax.swing.JTextField FieldFechaMesAviso;
     private javax.swing.JTextField FieldPrecioVenta;
     private javax.swing.JTextField FiledNombProd;
     private javax.swing.JLabel FondoText1;
     private javax.swing.JLabel FondoText2;
     private javax.swing.JLabel FondoText3;
     private javax.swing.JLabel FondoText4;
-    private javax.swing.JLabel FondoText5;
-    private javax.swing.JLabel FondoText6;
     private javax.swing.JLabel FondoText7;
     private javax.swing.JLabel FondoText8;
     private javax.swing.JTextField Id;
@@ -314,6 +349,8 @@ public class GUI_RegisProducto extends javax.swing.JFrame {
     private javax.swing.JLabel LabelCategoria;
     private javax.swing.JLabel LabelConcept;
     private javax.swing.JLabel LabelCosto;
+    private javax.swing.JLabel LabelD_M_A;
+    private javax.swing.JLabel LabelD_M_A1;
     private javax.swing.JLabel LabelFechaAvisoCadu;
     private javax.swing.JLabel LabelFechaCadu;
     private javax.swing.JLabel LabelNombProduct;

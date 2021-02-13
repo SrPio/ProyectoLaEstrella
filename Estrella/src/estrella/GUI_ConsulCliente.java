@@ -5,13 +5,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class GUI_ConsulVent extends javax.swing.JFrame {
+public class GUI_ConsulCliente extends javax.swing.JFrame {
 
     public static String campo = "";
 
-    public GUI_ConsulVent() {
+    public GUI_ConsulCliente() {
         initComponents();
     }
 
@@ -27,25 +28,27 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelConsulVent = new javax.swing.JPanel();
+        PanelConsulCliente = new javax.swing.JPanel();
         BtnRegisVent = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
         LineaDivisora = new javax.swing.JLabel();
-        BtnBuscarProd = new javax.swing.JButton();
         BuscarProdu = new javax.swing.JTextField();
+        BtnBuscarProd = new javax.swing.JButton();
         FondoText10 = new javax.swing.JLabel();
         LabelBusqueda = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         comboBusqueda = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableVent = new javax.swing.JTable();
+        tableCliente = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        BtnBorrar = new javax.swing.JButton();
+        CampoGuarda_IdCliente = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelConsulVent.setBackground(new java.awt.Color(248, 248, 248));
-        PanelConsulVent.setPreferredSize(new java.awt.Dimension(1050, 600));
-        PanelConsulVent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelConsulCliente.setBackground(new java.awt.Color(248, 248, 248));
+        PanelConsulCliente.setPreferredSize(new java.awt.Dimension(1050, 600));
+        PanelConsulCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnRegisVent.setBackground(new java.awt.Color(248, 248, 248));
         BtnRegisVent.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
@@ -62,89 +65,118 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
                 BtnRegisVentActionPerformed(evt);
             }
         });
-        PanelConsulVent.add(BtnRegisVent, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
+        PanelConsulCliente.add(BtnRegisVent, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
 
         Titulo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 30)); // NOI18N
         Titulo.setForeground(new java.awt.Color(0, 0, 0));
-        Titulo.setText("Consultar Venta");
-        PanelConsulVent.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        Titulo.setText("Consultar Cliente");
+        PanelConsulCliente.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         LineaDivisora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Linea001.png"))); // NOI18N
-        PanelConsulVent.add(LineaDivisora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 870, 20));
+        PanelConsulCliente.add(LineaDivisora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 870, 20));
+
+        BuscarProdu.setBackground(new java.awt.Color(232, 232, 232));
+        BuscarProdu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        BuscarProdu.setForeground(new java.awt.Color(51, 51, 51));
+        BuscarProdu.setBorder(null);
+        PanelConsulCliente.add(BuscarProdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 170, -1));
 
         BtnBuscarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_Buscar.png"))); // NOI18N
         BtnBuscarProd.setBorderPainted(false);
         BtnBuscarProd.setContentAreaFilled(false);
-        BtnBuscarProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnBuscarProd.setFocusPainted(false);
         BtnBuscarProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnBuscarProdActionPerformed(evt);
             }
         });
-        PanelConsulVent.add(BtnBuscarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
-
-        BuscarProdu.setBackground(new java.awt.Color(232, 232, 232));
-        BuscarProdu.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
-        BuscarProdu.setForeground(new java.awt.Color(51, 51, 51));
-        BuscarProdu.setBorder(null);
-        PanelConsulVent.add(BuscarProdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 150, -1));
+        PanelConsulCliente.add(BtnBuscarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
 
         FondoText10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Search Bar.png"))); // NOI18N
-        PanelConsulVent.add(FondoText10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        PanelConsulCliente.add(FondoText10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         LabelBusqueda.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelBusqueda.setForeground(new java.awt.Color(0, 0, 0));
         LabelBusqueda.setText("Buscar:");
-        PanelConsulVent.add(LabelBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
+        PanelConsulCliente.add(LabelBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Buscar por:");
-        PanelConsulVent.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, -1, -1));
+        PanelConsulCliente.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, -1, -1));
 
-        comboBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Codigo" }));
+        comboBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Identificación", "Nombre" }));
         comboBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBusquedaActionPerformed(evt);
             }
         });
-        PanelConsulVent.add(comboBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, -1, -1));
+        PanelConsulCliente.add(comboBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, -1, -1));
 
-        tableVent.setModel(new javax.swing.table.DefaultTableModel(
+        tableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "codigo", "cantidad", "costo_total", "estado", "id_cliente", "hora", "fecha"
+                "id_cliente", "nombre", "apellido", "telefono", "deuda", "direccion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tableVent);
+        tableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClienteMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableCliente);
 
-        PanelConsulVent.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 880, 250));
+        PanelConsulCliente.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 880, 250));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("SI DESEA VER TODOS LOS DATOS REGISTRADOS, DEJE LA BARRA DE BUSQUEDA EN BLANCO.");
-        PanelConsulVent.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+        PanelConsulCliente.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+
+        BtnBorrar.setBackground(new java.awt.Color(248, 248, 248));
+        BtnBorrar.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        BtnBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton_morado2.png"))); // NOI18N
+        BtnBorrar.setText("Borrar");
+        BtnBorrar.setBorderPainted(false);
+        BtnBorrar.setContentAreaFilled(false);
+        BtnBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnBorrar.setFocusPainted(false);
+        BtnBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBorrarActionPerformed(evt);
+            }
+        });
+        PanelConsulCliente.add(BtnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 250, 90));
+
+        CampoGuarda_IdCliente.setEditable(false);
+        CampoGuarda_IdCliente.setBackground(new java.awt.Color(232, 232, 232));
+        CampoGuarda_IdCliente.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
+        CampoGuarda_IdCliente.setForeground(new java.awt.Color(51, 51, 51));
+        CampoGuarda_IdCliente.setText("0");
+        CampoGuarda_IdCliente.setBorder(null);
+        PanelConsulCliente.add(CampoGuarda_IdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelConsulVent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelConsulCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelConsulVent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelConsulCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -158,23 +190,23 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
 
         Connection con = null;
 
-        if ((comboBusqueda.getSelectedItem().toString()).equals("Codigo")) {
+        if ((comboBusqueda.getSelectedItem().toString()).equals("Identificación")) {
 
             campo = BuscarProdu.getText();
             String where = "";
             if (!"".equals(campo)) {
-                where = "WHERE codigo = '" + campo + "'";
+                where = "WHERE id_cliente = '" + campo + "'";
             }
 
             try {
                 DefaultTableModel modelo = new DefaultTableModel();
-                tableVent.setModel(modelo);
+                tableCliente.setModel(modelo);
 
                 PreparedStatement ps = null;
                 ResultSet rs = null;
                 con = getConection();
 
-                String sql = "SELECT * FROM public.ventas " + where;
+                String sql = "SELECT * FROM public.cliente " + where;
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
@@ -182,17 +214,16 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
                 ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
                 int cantidadColumnas = rsMd.getColumnCount();
 
-                modelo.addColumn("codigo");
-                modelo.addColumn("cantidad");
-                modelo.addColumn("costo_total");
-                modelo.addColumn("estado");
                 modelo.addColumn("id_cliente");
-                modelo.addColumn("hora");
-                modelo.addColumn("fecha");
+                modelo.addColumn("nombre");
+                modelo.addColumn("apellido");
+                modelo.addColumn("telefono");
+                modelo.addColumn("deuda");
+                modelo.addColumn("direccion");
 
-                int[] anchos = {50, 50, 50, 50, 50, 50, 50};
-                for (int i = 0; i < tableVent.getColumnCount(); i++) {
-                    tableVent.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+                int[] anchos = {50, 50, 50, 50, 50, 50};
+                for (int i = 0; i < tableCliente.getColumnCount(); i++) {
+                    tableCliente.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
                 }
 
                 while (rs.next()) {
@@ -207,23 +238,22 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
                 System.err.println(ex.toString());
             }
             System.out.println(where);
-        }
-        /*else if ((comboBusqueda.getSelectedItem().toString()).equals("Codigo")) {
+        } else if ((comboBusqueda.getSelectedItem().toString()).equals("Nombre")) {
             campo = BuscarProdu.getText();
             String where = "";
             if (!"".equals(campo)) {
-                where = "WHERE id_producto LIKE '%" + campo + "%'";
+                where = "WHERE nombre LIKE '%" + campo + "%'";
             }
 
             try {
                 DefaultTableModel modelo = new DefaultTableModel();
-                tableProducto.setModel(modelo);
+                tableCliente.setModel(modelo);
 
                 PreparedStatement ps = null;
                 ResultSet rs = null;
                 con = getConection();
 
-                String sql = "SELECT * FROM public.producto " + where;
+                String sql = "SELECT * FROM public.cliente " + where;
                 System.out.println(sql);
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
@@ -231,21 +261,16 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
                 ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
                 int cantidadColumnas = rsMd.getColumnCount();
 
-                modelo.addColumn("id_producto");
-                modelo.addColumn("nombre_producto");
-                modelo.addColumn("concepto");
-                modelo.addColumn("costo");
-                modelo.addColumn("existencias");
-                modelo.addColumn("costo_ponderado");
-                modelo.addColumn("precio_venta");
-                modelo.addColumn("categoria");
-                modelo.addColumn("estado");
-                modelo.addColumn("fecha_caducidad");
-                modelo.addColumn("fecha_aviso");
+                modelo.addColumn("id_cliente");
+                modelo.addColumn("nombre");
+                modelo.addColumn("apellido");
+                modelo.addColumn("telefono");
+                modelo.addColumn("deuda");
+                modelo.addColumn("direccion");
 
-                int[] anchos = {50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50};
-                for (int i = 0; i < tableProducto.getColumnCount(); i++) {
-                    tableProducto.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+                int[] anchos = {50, 50, 50, 50, 50, 50};
+                for (int i = 0; i < tableCliente.getColumnCount(); i++) {
+                    tableCliente.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
                 }
 
                 while (rs.next()) {
@@ -260,7 +285,7 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
                 System.err.println(ex.toString());
             }
 
-        }*/
+        }
 
 
     }//GEN-LAST:event_BtnBuscarProdActionPerformed
@@ -269,16 +294,56 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBusquedaActionPerformed
 
+    private void BtnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBorrarActionPerformed
+
+        Connection con = null;
+
+        if (CampoGuarda_IdCliente.getText().equals("0")) {
+
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario de la tabla");
+
+        } else {
+
+            try {
+
+                con = getConection();
+                ps = con.prepareStatement("DELETE FROM public.cliente WHERE id_cliente=? ");
+                ps.setInt(1, Integer.parseInt(CampoGuarda_IdCliente.getText()));
+
+                int res = ps.executeUpdate();
+
+                if (res > 0) {
+                    JOptionPane.showMessageDialog(null, "Persona Eliminada");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al Eliminar persona");
+                    System.out.println("Error al Eliminar persona");
+                }
+
+                con.close();
+
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+        }
+
+    }//GEN-LAST:event_BtnBorrarActionPerformed
+
+    private void tableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClienteMouseClicked
+
+        int selection = tableCliente.rowAtPoint(evt.getPoint());
+        CampoGuarda_IdCliente.setText(String.valueOf(tableCliente.getValueAt(selection, 0)));
+    }//GEN-LAST:event_tableClienteMouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
 
-        GUI_ConsulVent ventanaConsulVent = new GUI_ConsulVent();
-        ventanaConsulVent.setBounds(0, 0, 1050, 600);
-        ventanaConsulVent.setVisible(true);
-        ventanaConsulVent.setResizable(false);
-        ventanaConsulVent.setLocationRelativeTo(null);
+        GUI_ConsulCliente ventanaConsulCliente = new GUI_ConsulCliente();
+        ventanaConsulCliente.setBounds(0, 0, 1050, 600);
+        ventanaConsulCliente.setVisible(true);
+        ventanaConsulCliente.setResizable(false);
+        ventanaConsulCliente.setLocationRelativeTo(null);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //  new GUI_Producto().setVisible(true);
@@ -287,18 +352,20 @@ public class GUI_ConsulVent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBorrar;
     private javax.swing.JButton BtnBuscarProd;
     private javax.swing.JButton BtnRegisVent;
     private javax.swing.JTextField BuscarProdu;
+    private javax.swing.JTextField CampoGuarda_IdCliente;
     private javax.swing.JLabel FondoText10;
     private javax.swing.JLabel LabelBusqueda;
     private javax.swing.JLabel LineaDivisora;
-    public static javax.swing.JPanel PanelConsulVent;
+    public static javax.swing.JPanel PanelConsulCliente;
     private javax.swing.JLabel Titulo;
     private javax.swing.JComboBox<String> comboBusqueda;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tableVent;
+    private javax.swing.JTable tableCliente;
     // End of variables declaration//GEN-END:variables
 }

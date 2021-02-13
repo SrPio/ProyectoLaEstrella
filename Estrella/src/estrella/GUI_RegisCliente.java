@@ -24,7 +24,7 @@ public class GUI_RegisCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelRegisPro = new javax.swing.JPanel();
+        PanelRegisClient = new javax.swing.JPanel();
         Labelid_client = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         FiledId_client = new javax.swing.JTextField();
@@ -49,14 +49,14 @@ public class GUI_RegisCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelRegisPro.setBackground(new java.awt.Color(248, 248, 248));
-        PanelRegisPro.setPreferredSize(new java.awt.Dimension(1050, 600));
-        PanelRegisPro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelRegisClient.setBackground(new java.awt.Color(248, 248, 248));
+        PanelRegisClient.setPreferredSize(new java.awt.Dimension(1050, 600));
+        PanelRegisClient.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Labelid_client.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         Labelid_client.setForeground(new java.awt.Color(0, 0, 0));
         Labelid_client.setText("Id Cliente");
-        PanelRegisPro.add(Labelid_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        PanelRegisClient.add(Labelid_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(248, 248, 248));
         jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
@@ -73,104 +73,104 @@ public class GUI_RegisCliente extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        PanelRegisPro.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
+        PanelRegisClient.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 250, 90));
 
         FiledId_client.setBackground(new java.awt.Color(232, 232, 232));
         FiledId_client.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FiledId_client.setForeground(new java.awt.Color(51, 51, 51));
         FiledId_client.setBorder(null);
-        PanelRegisPro.add(FiledId_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 180, -1));
+        PanelRegisClient.add(FiledId_client, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 180, -1));
 
         FieldApellido.setBackground(new java.awt.Color(232, 232, 232));
         FieldApellido.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FieldApellido.setForeground(new java.awt.Color(51, 51, 51));
         FieldApellido.setBorder(null);
-        PanelRegisPro.add(FieldApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 180, -1));
+        PanelRegisClient.add(FieldApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 180, -1));
 
         FieldDeuda.setBackground(new java.awt.Color(232, 232, 232));
         FieldDeuda.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FieldDeuda.setForeground(new java.awt.Color(51, 51, 51));
         FieldDeuda.setBorder(null);
-        PanelRegisPro.add(FieldDeuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 180, -1));
+        PanelRegisClient.add(FieldDeuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 180, -1));
 
         FieldNombre.setBackground(new java.awt.Color(232, 232, 232));
         FieldNombre.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FieldNombre.setForeground(new java.awt.Color(51, 51, 51));
         FieldNombre.setBorder(null);
-        PanelRegisPro.add(FieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 180, -1));
+        PanelRegisClient.add(FieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 180, -1));
 
         FieldTelefono.setBackground(new java.awt.Color(232, 232, 232));
         FieldTelefono.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FieldTelefono.setForeground(new java.awt.Color(51, 51, 51));
         FieldTelefono.setBorder(null);
-        PanelRegisPro.add(FieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 180, -1));
+        PanelRegisClient.add(FieldTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 180, -1));
 
         LabelNombre.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelNombre.setForeground(new java.awt.Color(0, 0, 0));
         LabelNombre.setText("Nombre");
-        PanelRegisPro.add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+        PanelRegisClient.add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         LabelApellido.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelApellido.setForeground(new java.awt.Color(0, 0, 0));
         LabelApellido.setText("Apellido");
-        PanelRegisPro.add(LabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, -1));
+        PanelRegisClient.add(LabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, -1, -1));
 
         LabelDeuda.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelDeuda.setForeground(new java.awt.Color(0, 0, 0));
         LabelDeuda.setText("Deuda");
-        PanelRegisPro.add(LabelDeuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+        PanelRegisClient.add(LabelDeuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
         LabelTelefono.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelTelefono.setForeground(new java.awt.Color(0, 0, 0));
         LabelTelefono.setText("Telefono");
-        PanelRegisPro.add(LabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+        PanelRegisClient.add(LabelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
         FondoText1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        PanelRegisClient.add(FondoText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         Titulo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 30)); // NOI18N
         Titulo.setForeground(new java.awt.Color(0, 0, 0));
         Titulo.setText("Registrar Cliente");
-        PanelRegisPro.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        PanelRegisClient.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         LineaDivisora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Linea001.png"))); // NOI18N
-        PanelRegisPro.add(LineaDivisora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 870, 20));
+        PanelRegisClient.add(LineaDivisora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 870, 20));
 
         FondoText2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        PanelRegisClient.add(FondoText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         FondoText3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, -1, -1));
+        PanelRegisClient.add(FondoText3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, -1, -1));
 
         FondoText4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        PanelRegisClient.add(FondoText4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
         FondoText5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
+        PanelRegisClient.add(FondoText5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
 
         LabelDireccion.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         LabelDireccion.setForeground(new java.awt.Color(0, 0, 0));
         LabelDireccion.setText("Direccion");
-        PanelRegisPro.add(LabelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+        PanelRegisClient.add(LabelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
 
         FieldDireccion.setBackground(new java.awt.Color(232, 232, 232));
         FieldDireccion.setFont(new java.awt.Font("Microsoft JhengHei", 0, 12)); // NOI18N
         FieldDireccion.setForeground(new java.awt.Color(51, 51, 51));
         FieldDireccion.setBorder(null);
-        PanelRegisPro.add(FieldDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 180, -1));
+        PanelRegisClient.add(FieldDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 180, -1));
 
         FondoText6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CampoDeText.png"))); // NOI18N
-        PanelRegisPro.add(FondoText6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+        PanelRegisClient.add(FondoText6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRegisPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelRegisClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRegisPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelRegisClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -245,7 +245,7 @@ public class GUI_RegisCliente extends javax.swing.JFrame {
     private javax.swing.JLabel LabelTelefono;
     private javax.swing.JLabel Labelid_client;
     private javax.swing.JLabel LineaDivisora;
-    public static javax.swing.JPanel PanelRegisPro;
+    public static javax.swing.JPanel PanelRegisClient;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables

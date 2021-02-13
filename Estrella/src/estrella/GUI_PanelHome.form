@@ -61,35 +61,34 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
                               <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
                               <Component id="TituloSeccionSuperior" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="BtnVerProduct" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="BtnVerClientes" min="-2" pref="170" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="MiniRecatanguloSuperior" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                          <Component id="BtnRegisComp" min="-2" pref="180" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="220" pref="220" max="-2" attributes="0"/>
-                          <Component id="BtnRegisRepor" min="-2" pref="170" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
-                          <Component id="TituloSeccionInferior" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  <Component id="BtnRegisComp" min="-2" pref="180" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                                  <Component id="TituloSeccionInferior" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="BtnRegisRepor" min="-2" pref="170" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
@@ -110,8 +109,14 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                                          <Component id="SubtitleEmpresa" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                   <Component id="TituloSeccionSuperior" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
@@ -121,29 +126,21 @@
                                   <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
                                   <Component id="BtnVerClientes" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="NombreEmpresa" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="MiniRecatanguloSuperior" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                  <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                                   <Component id="BtnRegisComp" min="-2" pref="70" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
-                                  <Component id="BtnRegisRepor" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="TituloSeccionInferior" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="TituloSeccionInferior2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
+                                  <Component id="BtnRegisRepor" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
@@ -236,6 +233,9 @@
             <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnVerClientesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="MiniRecatanguloSuperior">
           <Properties>
@@ -310,6 +310,9 @@
             <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegisReporActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnRegisComp">
           <Properties>
