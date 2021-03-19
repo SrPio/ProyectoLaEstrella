@@ -8,7 +8,7 @@ package estrella;
 
 import static estrella.GuiConsulCliente.PanelConsulCliente;
 import static estrella.GUI_ConsulProd.PanelConsulPro;
-import static estrella.GUI_ModiCliente.PanelModifClient;
+import static estrella.GuiModiCliente.PanelModifClient;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 
@@ -196,7 +196,7 @@ public class GuiClientes extends javax.swing.JFrame {
     **/
     private void BotonModClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModClientActionPerformed
 
-    GUI_ModiCliente ventanaModiCliente = new GUI_ModiCliente();
+    GuiModiCliente ventanaModiCliente = new GuiModiCliente();
     ventanaModiCliente.setSize(1050, 600);
     ventanaModiCliente.setLocation(0,0);
 

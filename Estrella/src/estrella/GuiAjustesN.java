@@ -8,7 +8,7 @@ package estrella;
 
 import static estrella.GuiConsulCliente.PanelConsulCliente;
 import static estrella.GUI_ConsulProd.PanelConsulPro;
-import static estrella.GUI_ModiCliente.PanelModifClient;
+import static estrella.GuiModiCliente.PanelModifClient;
 import static estrella.GUI_ModifiLoginN.PanelModifiLogNuevoo;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
