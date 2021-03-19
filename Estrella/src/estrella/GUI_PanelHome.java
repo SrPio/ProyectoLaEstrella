@@ -8,7 +8,7 @@ package estrella;
 
 import static estrella.GUI_Clientes.PanelClient;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
-import static estrella.GUI_Producto.PanelProduct;
+import static estrella.GuiProducto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
 import static estrella.GUI_Reportes.PanelReportes;
@@ -270,7 +270,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
     **/
     private void BtnVerProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerProductActionPerformed
 
-    GUI_Producto ventanaProd = new GUI_Producto();
+    GuiProducto ventanaProd = new GuiProducto();
     ventanaProd.setSize(780, 570);
     ventanaProd.setLocation(30, 60);
 
@@ -418,7 +418,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
     ventanaPanelHome.setLocationRelativeTo(null);
     java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //  new GUI_Producto().setVisible(true);
+                //  new GuiProducto().setVisible(true);
           }
         }
     );
