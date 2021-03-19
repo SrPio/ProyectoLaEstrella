@@ -1,6 +1,7 @@
 package estrella;
 
 import static estrella.Conexion.getConection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,17 +9,26 @@ import javax.swing.JOptionPane;
 
 public class GuiRegisVentaFiado extends javax.swing.JFrame {
 
-    public GuiRegisVentaFiado() {
-        initComponents();
-    }
+  public GuiRegisVentaFiado() {
+    initComponents();
+  }
 
   PreparedStatement ps;
   PreparedStatement ps2; 
   PreparedStatement ps3; 
   PreparedStatement ps4 ;
-    ResultSet rs;
-    String existencia, fecha;
-    int nuevaExistencia = 0, costo, costo1;
+  ResultSet rs;
+  String existencia;
+  String fecha;
+  int nuevaExistencia = 0;
+  int costo = 0; 
+  int costo1 = 0;
+  int cantidad = 0;
+  int existenciaAct = 0;
+  int res;
+  int res2;
+  int res3;
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,73 +231,71 @@ public class GuiRegisVentaFiado extends javax.swing.JFrame {
 
     private void BtnRegisVentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisVentActionPerformed
 
-        Connection con = null;
+    Connection con = null;
+    try {
+      con = getConection();
+      String sql = "SELECT * FROM public.producto " 
+              + "WHERE id_producto = '" + Integer.parseInt(IdProducto.getText()) + "'";
+      ps4 = con.prepareStatement(sql);
 
-        try {
+      rs = ps4.executeQuery();
 
-            con = getConection();
+      if (rs.next()) {
+        costo = rs.getInt("costo");
+        existencia = rs.getString("existencias");
+        cantidad = Integer.parseInt(FieldCantidad.getText());
+        existenciaAct = Integer.parseInt(existencia);
+        nuevaExistencia = existenciaAct - cantidad;
+      } else {
+        JOptionPane.showMessageDialog(null, "No existe el producto");
+      }
+      fecha = (FieldFechaDia.getText() + " - " 
+              + FieldFechaMes.getText() + " - " + FieldFechaAño.getText());
 
-            String sql = "SELECT * FROM public.producto " + "WHERE id_producto = '" + Integer.parseInt(IdProducto.getText()) + "'";
-            ps4 = con.prepareStatement(sql);
+      if (nuevaExistencia > 0) {
 
-            rs = ps4.executeQuery();
+        costo *= Integer.parseInt(FieldCantidad.getText());
+        FieldCosto.setText(String.valueOf(costo));
+        ps = con.prepareStatement("INSERT INTO ventas(codigo, cantidad, costo_total,"
+                + " estado, id_cliente, hora, fecha) VALUES (?,?,?,?,?,?,?)");
+        ps.setInt(1, Integer.parseInt(IdVenta.getText()));
+        ps.setInt(2, Integer.parseInt(FieldCantidad.getText()));
+        ps.setInt(3, costo);
+        ps.setString(4, estado.getText());
+        ps.setInt(5, Integer.parseInt(FieldIdCliente.getText()));
+        ps.setString(6, FieldHora.getText());
+        ps.setString(7, fecha);
+        res = ps.executeUpdate();
 
-            if (rs.next()) {
-                costo = rs.getInt("costo");
-                existencia = rs.getString("existencias");
-                nuevaExistencia = Integer.parseInt(existencia) - Integer.parseInt(FieldCantidad.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe el producto");
-            }
-            
-            fecha = (FieldFechaDia.getText() + " - " + FieldFechaMes.getText() + " - " + FieldFechaAño.getText());
+        ps2 = con.prepareStatement("INSERT INTO producto_ventas"
+                + "(id_producto, codigo_venta) VALUES (?,?)");
+        ps2.setInt(1, Integer.parseInt(IdProducto.getText()));
+        ps2.setInt(2, Integer.parseInt(IdVenta.getText()));
+        res2 = ps2.executeUpdate();
 
-            if (nuevaExistencia > 0) {
+        ps3 = con.prepareStatement("UPDATE producto SET existencias = ?"
+                + "  where id_producto= " + Integer.parseInt(IdProducto.getText()) + "");
+        ps3.setInt(1, nuevaExistencia);
+        res3 = ps3.executeUpdate();
 
-                costo *= Integer.parseInt(FieldCantidad.getText());
-                FieldCosto.setText(String.valueOf(costo));
-                ps = con.prepareStatement("INSERT INTO ventas(codigo, cantidad, costo_total, estado, id_cliente, hora, fecha) VALUES (?,?,?,?,?,?,?)");
-                ps.setInt(1, Integer.parseInt(IdVenta.getText()));
-                ps.setInt(2, Integer.parseInt(FieldCantidad.getText()));
-                ps.setInt(3, costo);
-                ps.setString(4, estado.getText());
-                ps.setInt(5, Integer.parseInt(FieldIdCliente.getText()));
-                ps.setString(6, FieldHora.getText());
-                ps.setString(7, fecha);
-
-                int res = ps.executeUpdate();
-
-                ps2 = con.prepareStatement("INSERT INTO producto_ventas(id_producto, codigo_venta) VALUES (?,?)");
-                ps2.setInt(1, Integer.parseInt(IdProducto.getText()));
-                ps2.setInt(2, Integer.parseInt(IdVenta.getText()));
-
-                int res2 = ps2.executeUpdate();
-
-                ps3 = con.prepareStatement("UPDATE producto SET existencias = ?  where id_producto= " + Integer.parseInt(IdProducto.getText()) + "");
-                ps3.setInt(1, nuevaExistencia);
-
-                int res4 = ps3.executeUpdate();
-
-                if (res > 0 && res2 > 0 && res4 > 0) {
-                    JOptionPane.showMessageDialog(null, "Venta Exitosa");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error al Guardar la Venta");
-                    //  System.out.println("Error al Guardar Producto");
-                }
-
-                con.close();
-            } else {
-                JOptionPane.showMessageDialog(null, "La cantidad a vender es mayor que la cantidad en stock \n La cantidad disponible en stock es de " + existencia);
-            }
-
-        } catch (Exception e) {
-            System.err.println(e);
+        if (res > 0 && res2 > 0 && res3 > 0) {
+          JOptionPane.showMessageDialog(null, "Venta Exitosa");
+        } else {
+          JOptionPane.showMessageDialog(null, "Error al Guardar la Venta");
         }
 
-        // Opcion para imprimir la factura
-        int seleccion = JOptionPane.showOptionDialog(
-                null,
-                "¿Desea guardar la factura?",
+        con.close();
+      } else {
+        JOptionPane.showMessageDialog(null, "La cantidad a vender es mayor "
+                + " que la cantidad en  stock \n La cantidad disponible en stock es de " + existencia);
+      }
+
+    } catch (Exception e) {
+      System.err.println(e);
+    }
+
+    // Opcion para imprimir la factura
+    int seleccion = JOptionPane.showOptionDialog(null, "¿Desea guardar la factura?",
                 "Facturación",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
@@ -295,60 +303,53 @@ public class GuiRegisVentaFiado extends javax.swing.JFrame {
                 new Object[]{"Sí", "No"}, // null para YES, NO y CANCEL
                 "opcion 1");
 
-        if (seleccion == 0) {
-            System.out.println("Guardar");
-        } else {
-
-            System.out.println("No Guardar");
-        }
+    if (seleccion == 0) {
+      System.out.println("Guardar");
+    } else {
+      System.out.println("No Guardar");
+    }
     }//GEN-LAST:event_BtnRegisVentActionPerformed
 
     private void FieldCantidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FieldCantidadKeyReleased
         // TODO add your handling code here:
         Connection con = null;
 
-        if (FieldCantidad.getText().isEmpty()) {
+    if (FieldCantidad.getText().isEmpty()) {
+    } else {
+      try {
+        con = getConection();
+        String sql = "SELECT * FROM public.producto " + "WHERE id_producto = '" 
+                + Integer.parseInt(IdProducto.getText()) + "'";
+        ps4 = con.prepareStatement(sql);
+        rs = ps4.executeQuery();
 
+        if (rs.next()) {
+          costo1 = rs.getInt("costo");
+          costo1 *= Integer.parseInt(FieldCantidad.getText());
+          FieldCosto.setText(String.valueOf(costo1));
         } else {
-
-            try {
-
-                con = getConection();
-
-                String sql = "SELECT * FROM public.producto " + "WHERE id_producto = '" + Integer.parseInt(IdProducto.getText()) + "'";
-                ps4 = con.prepareStatement(sql);
-
-                rs = ps4.executeQuery();
-
-                if (rs.next()) {
-                    costo1 = rs.getInt("costo");
-                    costo1 *= Integer.parseInt(FieldCantidad.getText());
-                    FieldCosto.setText(String.valueOf(costo1));
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "No existe el producto");
-                }
-
-            } catch (Exception e) {
-                System.err.println(e);
-            }
+          JOptionPane.showMessageDialog(null, "No existe el producto");
         }
+      } catch (Exception e) {
+        System.err.println(e);
+      }
+    }
     }//GEN-LAST:event_FieldCantidadKeyReleased
 
-    /**
+    /**.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
 
-        GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
-        ventanaRegisVenta.setBounds(0, 0, 1050, 600);
-        ventanaRegisVenta.setVisible(true);
-        ventanaRegisVenta.setResizable(false);
-        ventanaRegisVenta.setLocationRelativeTo(null);
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+    GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
+    ventanaRegisVenta.setBounds(0, 0, 1050, 600);
+    ventanaRegisVenta.setVisible(true);
+    ventanaRegisVenta.setResizable(false);
+    ventanaRegisVenta.setLocationRelativeTo(null);
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
                 //  new GUI_Producto().setVisible(true);
-            }
+        }
         });
     }
 
