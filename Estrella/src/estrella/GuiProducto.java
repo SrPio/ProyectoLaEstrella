@@ -219,7 +219,7 @@ public class GuiProducto extends javax.swing.JFrame {
     ventanaProd.setResizable(false);
     ventanaProd.setLocationRelativeTo(null);
     java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        public void run() {
               //  new GuiProducto().setVisible(true);
           }
         }

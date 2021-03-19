@@ -183,8 +183,8 @@ public class GuiRegisCliente extends javax.swing.JFrame {
     **/
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        //Funcion Costo promedio Ponderado
-        Connection con = null;
+    //Funcion Costo promedio Ponderado
+    Connection con = null;
 
     try {
 
@@ -209,7 +209,7 @@ public class GuiRegisCliente extends javax.swing.JFrame {
 
       con.close();
 
-        } catch (Exception e) {
+    } catch (Exception e) {
       System.err.println(e);
     }
     /**
@@ -228,7 +228,7 @@ public class GuiRegisCliente extends javax.swing.JFrame {
     ventanaRegisCliente.setResizable(false);
     ventanaRegisCliente.setLocationRelativeTo(null);
     java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        public void run() {
                 //  new GUI_Producto().setVisible(true);
           }
         }

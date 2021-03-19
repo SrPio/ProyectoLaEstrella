@@ -8,10 +8,10 @@ package estrella;
 
 import static estrella.GUI_Clientes.PanelClient;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
-import static estrella.GuiProducto.PanelProduct;
-import static estrella.GuiRegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
 import static estrella.GUI_Reportes.PanelReportes;
+import static estrella.GuiProducto.PanelProduct;
+import static estrella.GuiRegisCliente.PanelRegisClient;
 
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
@@ -22,7 +22,7 @@ import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
 /**
  * @author Andres.
  **/
-public class GUI_PanelHome extends javax.swing.JFrame {
+public class GuiPanelHome extends javax.swing.JFrame {
 
     
   //Iconos Selected
@@ -39,7 +39,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
   ImageIcon iconobtnNS4 = new ImageIcon("src/Images/btnInventWH.png");
   ImageIcon iconobtnNS5 = new ImageIcon("src/Images/BtnAjusWH.png");
     
-  public GUI_PanelHome() {
+  public GuiPanelHome() {
     initComponents();
   }
 
@@ -311,6 +311,10 @@ public class GUI_PanelHome extends javax.swing.JFrame {
       PanelCentralHome.add(PanelRegisVentContado, BorderLayout.CENTER);
       PanelCentralHome.revalidate();
       PanelCentralHome.repaint();
+      
+    /**
+     * No es posible modificar la linea de codigo siguiente.
+    **/
     }
     else {
       System.out.println("Fia");
@@ -411,13 +415,13 @@ public class GUI_PanelHome extends javax.swing.JFrame {
   **/
   public static void main(String args[]) {
 
-    GUI_PanelHome ventanaPanelHome = new GUI_PanelHome();
+    GuiPanelHome ventanaPanelHome = new GuiPanelHome();
     ventanaPanelHome.setBounds(0, 0, 1050, 600);
     ventanaPanelHome.setVisible(true);
     ventanaPanelHome.setResizable(false);
     ventanaPanelHome.setLocationRelativeTo(null);
     java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        public void run() {
                 //  new GuiProducto().setVisible(true);
           }
         }

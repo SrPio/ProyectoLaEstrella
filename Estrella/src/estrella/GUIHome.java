@@ -9,7 +9,7 @@ import static estrella.GUI_AjustesN.PanelAjustN;
 import static estrella.GUI_Clientes.PanelClient;
 import static estrella.GUI_Compra_Venta.PanelCompraVenta;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
-import static estrella.GUI_PanelHome.PanelCentralHome;
+import static estrella.GuiPanelHome.PanelCentralHome;
 import static estrella.GuiProducto.PanelProduct;
 import static estrella.GuiRegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
@@ -495,7 +495,7 @@ public class GUIHome extends javax.swing.JFrame {
 
     private void HomeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBTNActionPerformed
 
-        GUI_PanelHome ventanaPanelHome = new GUI_PanelHome();
+        GuiPanelHome ventanaPanelHome = new GuiPanelHome();
         ventanaPanelHome.setSize(1050, 600);
         ventanaPanelHome.setLocation(0, 0);
 
