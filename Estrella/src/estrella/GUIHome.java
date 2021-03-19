@@ -12,13 +12,13 @@ import static estrella.GUI_ConsulCliente.PanelConsulCliente;
 import static estrella.GUI_PanelHome.PanelCentralHome;
 import static estrella.GUI_Producto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
-import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
-import static estrella.Guireportes.PanelReportes;
+import static estrella.GuiRegisVentaContado.PanelRegisVentContado;
+import static estrella.GuiReportes.PanelReportes;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
+import static estrella.GuiRegisVentaFiado.PanelRegisVentFia;
 
 /**
  *
@@ -520,7 +520,7 @@ public class GUIHome extends javax.swing.JFrame {
         if (seleccion == 0) {
             System.out.println("Contado");
 
-            GUI_RegisVentaContado ventanaRegisVentaContado = new GUI_RegisVentaContado();
+            GuiRegisVentaContado ventanaRegisVentaContado = new GuiRegisVentaContado();
             ventanaRegisVentaContado.setSize(780, 570);
             ventanaRegisVentaContado.setLocation(30, 60);
 
@@ -547,7 +547,7 @@ public class GUIHome extends javax.swing.JFrame {
             if (seleccion2 == 0) {
                 System.out.println("Sí");
 
-                GUI_RegisVentaFiado ventanaRegisVenta = new GUI_RegisVentaFiado();
+                GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
                 ventanaRegisVenta.setSize(780, 570);
                 ventanaRegisVenta.setLocation(30, 60);
 
@@ -655,7 +655,7 @@ public class GUIHome extends javax.swing.JFrame {
 
     private void ReportesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportesBTNActionPerformed
 
-        Guireportes ventanaReportes = new Guireportes();
+        GuiReportes ventanaReportes = new GuiReportes();
         ventanaReportes.setSize(1050, 600);
         ventanaReportes.setLocation(0, 0);
 
@@ -667,7 +667,7 @@ public class GUIHome extends javax.swing.JFrame {
 
     private void BtnRegisReporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisReporActionPerformed
 
-        Guireportes ventanaReportes = new Guireportes();
+        GuiReportes ventanaReportes = new GuiReportes();
         ventanaReportes.setSize(1050, 600);
         ventanaReportes.setLocation(0, 0);
 

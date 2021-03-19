@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
+import static estrella.GuiRegisVentaFiado.PanelRegisVentFia;
 
 /**
  *

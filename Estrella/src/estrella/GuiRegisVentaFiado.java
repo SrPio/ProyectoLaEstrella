@@ -6,13 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
-public class GUI_RegisVentaFiado extends javax.swing.JFrame {
+public class GuiRegisVentaFiado extends javax.swing.JFrame {
 
-    public GUI_RegisVentaFiado() {
+    public GuiRegisVentaFiado() {
         initComponents();
     }
 
-    PreparedStatement ps, ps2, ps3, ps4;
+  PreparedStatement ps;
+  PreparedStatement ps2; 
+  PreparedStatement ps3; 
+  PreparedStatement ps4 ;
     ResultSet rs;
     String existencia, fecha;
     int nuevaExistencia = 0, costo, costo1;
@@ -68,7 +71,7 @@ public class GUI_RegisVentaFiado extends javax.swing.JFrame {
         BtnRegisVent.setText("Registrar");
         BtnRegisVent.setBorderPainted(false);
         BtnRegisVent.setContentAreaFilled(false);
-        BtnRegisVent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnRegisVent.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BtnRegisVent.setFocusPainted(false);
         BtnRegisVent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BtnRegisVent.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +202,6 @@ public class GUI_RegisVentaFiado extends javax.swing.JFrame {
         PanelRegisVentFia.add(FieldFechaAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 50, -1));
 
         LabelD_M_A.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
-        LabelD_M_A.setForeground(new java.awt.Color(0, 0, 0));
         LabelD_M_A.setText("dd - mm - aaa");
         PanelRegisVentFia.add(LabelD_M_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, -1, -1));
 
@@ -338,7 +340,7 @@ public class GUI_RegisVentaFiado extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-        GUI_RegisVentaFiado ventanaRegisVenta = new GUI_RegisVentaFiado();
+        GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
         ventanaRegisVenta.setBounds(0, 0, 1050, 600);
         ventanaRegisVenta.setVisible(true);
         ventanaRegisVenta.setResizable(false);

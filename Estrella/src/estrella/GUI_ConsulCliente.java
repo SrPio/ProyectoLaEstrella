@@ -203,7 +203,7 @@ public class GUI_ConsulCliente extends javax.swing.JFrame {
                 tableCliente.setModel(modelo);
 
                 PreparedStatement ps = null;
-                ResultSet rs = null;
+                rs = null;
                 con = getConection();
 
                 String sql = "SELECT * FROM public.cliente " + where;
