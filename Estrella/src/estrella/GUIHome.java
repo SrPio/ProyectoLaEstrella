@@ -13,7 +13,7 @@ import static estrella.GUI_PanelHome.PanelCentralHome;
 import static estrella.GUI_Producto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
-import static estrella.GUI_Reportes.PanelReportes;
+import static estrella.Guireportes.PanelReportes;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -655,7 +655,7 @@ public class GUIHome extends javax.swing.JFrame {
 
     private void ReportesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportesBTNActionPerformed
 
-        GUI_Reportes ventanaReportes = new GUI_Reportes();
+        Guireportes ventanaReportes = new Guireportes();
         ventanaReportes.setSize(1050, 600);
         ventanaReportes.setLocation(0, 0);
 
@@ -667,7 +667,7 @@ public class GUIHome extends javax.swing.JFrame {
 
     private void BtnRegisReporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisReporActionPerformed
 
-        GUI_Reportes ventanaReportes = new GUI_Reportes();
+        Guireportes ventanaReportes = new Guireportes();
         ventanaReportes.setSize(1050, 600);
         ventanaReportes.setLocation(0, 0);
 

@@ -211,8 +211,7 @@ public class Guiregisventacontado extends javax.swing.JFrame {
     /* No es posible modificar la siguiente a linea */
     private void BtnRegisVentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisVentActionPerformed
 
-        Connection con = null;
-
+    Connection con = null;
     try {
 
       con = getConection();
