@@ -1,6 +1,7 @@
 package estrella;
 
 import static estrella.Conexion.getConection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
