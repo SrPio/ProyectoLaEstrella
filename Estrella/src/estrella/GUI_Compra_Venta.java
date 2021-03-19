@@ -5,7 +5,7 @@
  */
 package estrella;
 
-import static estrella.GUI_RegisCliente.PanelRegisClient;
+import static estrella.GuiRegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisCompra.PanelRegisComp;
 import java.awt.BorderLayout;
 import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;

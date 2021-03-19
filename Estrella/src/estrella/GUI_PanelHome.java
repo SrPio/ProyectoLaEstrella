@@ -9,7 +9,7 @@ package estrella;
 import static estrella.GUI_Clientes.PanelClient;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
 import static estrella.GuiProducto.PanelProduct;
-import static estrella.GUI_RegisCliente.PanelRegisClient;
+import static estrella.GuiRegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
 import static estrella.GUI_Reportes.PanelReportes;
 
@@ -342,7 +342,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
       if (seleccion2 == 1) {
         System.out.println("No");
                 
-        GUI_RegisCliente ventanaRegisCliente = new GUI_RegisCliente();
+        GuiRegisCliente ventanaRegisCliente = new GuiRegisCliente();
         ventanaRegisCliente.setSize(780, 570);
         ventanaRegisCliente.setLocation(30, 60);
 

@@ -11,7 +11,7 @@ import static estrella.GUI_Compra_Venta.PanelCompraVenta;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
 import static estrella.GUI_PanelHome.PanelCentralHome;
 import static estrella.GuiProducto.PanelProduct;
-import static estrella.GUI_RegisCliente.PanelRegisClient;
+import static estrella.GuiRegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
 import static estrella.GUI_Reportes.PanelReportes;
 import java.awt.BorderLayout;
@@ -559,7 +559,7 @@ public class GUIHome extends javax.swing.JFrame {
             if (seleccion2 == 1) {
                 System.out.println("No");
                 
-                GUI_RegisCliente ventanaRegisCliente = new GUI_RegisCliente();
+                GuiRegisCliente ventanaRegisCliente = new GuiRegisCliente();
                 ventanaRegisCliente.setSize(780, 570);
                 ventanaRegisCliente.setLocation(30, 60);
 
