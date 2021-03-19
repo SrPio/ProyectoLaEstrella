@@ -9,7 +9,7 @@ package estrella;
 import static estrella.GuiConsulCliente.PanelConsulCliente;
 import static estrella.GUI_ConsulProd.PanelConsulPro;
 import static estrella.GuiModiCliente.PanelModifClient;
-import static estrella.GUI_ModifiLoginN.PanelModifiLogNuevoo;
+import static estrella.GuiModifiLoginN.PanelModifiLogNuevoo;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 
@@ -99,7 +99,7 @@ public class GuiAjustesN extends javax.swing.JFrame {
     **/
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
-    GUI_ModifiLoginN ventanaModifiLoginNuevo = new GUI_ModifiLoginN();
+    GuiModifiLoginN ventanaModifiLoginNuevo = new GuiModifiLoginN();
     ventanaModifiLoginNuevo.setSize(1050, 600);
     ventanaModifiLoginNuevo.setLocation(0,0);
 
