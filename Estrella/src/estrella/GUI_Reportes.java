@@ -5,7 +5,7 @@
  */
 package estrella;
 
-import static estrella.GUI_ConsulProd.PanelConsulPro;
+import static estrella.GuiConsulProd.PanelConsulPro;
 import static estrella.GUI_ModiProducto.PanelModiProduct;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 import static estrella.GUI_RepoCostos.PanelRepoCostos;
