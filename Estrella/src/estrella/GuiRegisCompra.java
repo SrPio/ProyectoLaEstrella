@@ -206,7 +206,7 @@ public class GuiRegisCompra extends javax.swing.JFrame {
     **/
     private void BtnRegisCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisCompActionPerformed
 
-        Connection con = null;
+    Connection con = null;
 
     try {
 

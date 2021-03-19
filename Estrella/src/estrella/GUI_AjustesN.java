@@ -10,7 +10,7 @@ import static estrella.GUI_ConsulProd.PanelConsulPro;
 import static estrella.GUI_ModiCliente.PanelModifClient;
 import static estrella.GUI_ModifiLoginN.PanelModifiLogNuevoo;
 import static estrella.GuiRegisCliente.PanelRegisClient;
-import static estrella.GUI_RegisProducto.PanelRegisPro;
+import static estrella.GuiRegisProducto.PanelRegisPro;
 import java.awt.BorderLayout;
 
 /**
