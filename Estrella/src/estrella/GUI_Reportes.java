@@ -6,7 +6,7 @@
 package estrella;
 
 import static estrella.GuiConsulProd.PanelConsulPro;
-import static estrella.GUI_ModiProducto.PanelModiProduct;
+import static estrella.GuiModiProducto.PanelModiProduct;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 import static estrella.GUI_RepoCostos.PanelRepoCostos;
 import java.awt.BorderLayout;

@@ -7,7 +7,7 @@ package estrella;
 
 import static estrella.Conexion.getConection;
 import static estrella.GuiConsulProd.PanelConsulPro;
-import static estrella.GUI_ModiProducto.PanelModiProduct;
+import static estrella.GuiModiProducto.PanelModiProduct;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 import java.awt.BorderLayout;
 import java.sql.Connection;

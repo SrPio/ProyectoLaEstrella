@@ -6,7 +6,7 @@
 package estrella;
 
 import static estrella.GuiConsulProd.PanelConsulPro;
-import static estrella.GUI_ModiProducto.PanelModiProduct;
+import static estrella.GuiModiProducto.PanelModiProduct;
 import static estrella.GUI_RegisProducto.PanelRegisPro;
 import java.awt.BorderLayout;
 
@@ -175,7 +175,7 @@ public class GUI_Producto extends javax.swing.JFrame {
 
     private void BotonModProduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModProduActionPerformed
 
-        GUI_ModiProducto ventanaModiProd = new GUI_ModiProducto();
+        GuiModiProducto ventanaModiProd = new GuiModiProducto();
         ventanaModiProd.setSize(1050, 600);
         ventanaModiProd.setLocation(0,0);
 
