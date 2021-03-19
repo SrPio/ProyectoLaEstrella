@@ -9,7 +9,7 @@ package estrella;
 import static estrella.GuiAjustesN.PanelAjustN;
 import static estrella.GuiClientes.PanelClient;
 import static estrella.GuiCompraVenta.PanelCompraVenta;
-import static estrella.GUI_ConsulCliente.PanelConsulCliente;
+import static estrella.GuiConsulCliente.PanelConsulCliente;
 import static estrella.GUI_PanelHome.PanelCentralHome;
 import static estrella.GUI_Producto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
@@ -626,7 +626,7 @@ public class GuiHome extends javax.swing.JFrame {
         //Luego lo redirecciona a la pantalla de consultar cliente
         System.out.println("No lo sé"); 
                 
-        GUI_ConsulCliente ventanaConsulCliente = new GUI_ConsulCliente();
+        GuiConsulCliente ventanaConsulCliente = new GuiConsulCliente();
         ventanaConsulCliente.setSize(780, 570);
         ventanaConsulCliente.setLocation(30, 60);
 

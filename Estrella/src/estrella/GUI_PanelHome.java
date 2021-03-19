@@ -6,7 +6,7 @@
 package estrella;
 
 import static estrella.GuiClientes.PanelClient;
-import static estrella.GUI_ConsulCliente.PanelConsulCliente;
+import static estrella.GuiConsulCliente.PanelConsulCliente;
 import static estrella.GUI_Producto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
 import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
@@ -341,7 +341,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
             if (seleccion2 == 2) {
                 System.out.println("No lo sé"); //Luego lo redirecciona a la pantalla de consultar cliente
                 
-                GUI_ConsulCliente ventanaConsulCliente = new GUI_ConsulCliente();
+                GuiConsulCliente ventanaConsulCliente = new GuiConsulCliente();
                 ventanaConsulCliente.setSize(780, 570);
                 ventanaConsulCliente.setLocation(30, 60);
 
