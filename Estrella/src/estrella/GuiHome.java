@@ -7,7 +7,7 @@
 package estrella;
 
 import static estrella.GuiAjustesN.PanelAjustN;
-import static estrella.GUI_Clientes.PanelClient;
+import static estrella.GuiClientes.PanelClient;
 import static estrella.GUI_Compra_Venta.PanelCompraVenta;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
 import static estrella.GUI_PanelHome.PanelCentralHome;
@@ -646,7 +646,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void BtnVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerClientesActionPerformed
 
-    GUI_Clientes ventanaClientes = new GUI_Clientes();
+    GuiClientes ventanaClientes = new GuiClientes();
     ventanaClientes.setSize(780, 570);
     ventanaClientes.setLocation(30, 60);
 
@@ -672,7 +672,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void ClientesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesBTNActionPerformed
 
-    GUI_Clientes ventanaClientes = new GUI_Clientes();
+    GuiClientes ventanaClientes = new GuiClientes();
     ventanaClientes.setSize(1050, 600);
     ventanaClientes.setLocation(0, 0);
 

@@ -6,7 +6,7 @@
 package estrella;
 
 import static estrella.Conexion.getConection;
-import static estrella.GUI_Clientes.PanelClient;
+import static estrella.GuiClientes.PanelClient;
 import static estrella.GUI_PanelHome.PanelCentralHome;
 import static estrella.GUI_Producto.PanelProduct;
 import java.awt.BorderLayout;
@@ -174,7 +174,7 @@ PreparedStatement ps;
                 contraseña = rs.getString("Password");
                 if(usuario.equals(FieldUsuario.getText()) && contraseña.equals(String.valueOf(jPasswordField.getPassword()))){
 
-                    GUIHome ventanaHome = new GUIHome();
+                    GuiHome ventanaHome = new GuiHome();
                     ventanaHome.setVisible(true);
                     this.dispose();
                     JOptionPane.showMessageDialog(null, "Bienvenido");

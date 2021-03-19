@@ -21,7 +21,7 @@ import java.awt.BorderLayout;
 public class GuiAjustesN extends javax.swing.JFrame {
 
   /**
-  * Creates new form GUI_Producto.
+  * Creates new form GUIProducto.
   **/
   public GuiAjustesN() {
     initComponents();

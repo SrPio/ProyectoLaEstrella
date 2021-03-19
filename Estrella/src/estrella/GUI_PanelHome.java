@@ -5,7 +5,7 @@
  */
 package estrella;
 
-import static estrella.GUI_Clientes.PanelClient;
+import static estrella.GuiClientes.PanelClient;
 import static estrella.GUI_ConsulCliente.PanelConsulCliente;
 import static estrella.GUI_Producto.PanelProduct;
 import static estrella.GUI_RegisCliente.PanelRegisClient;
@@ -355,7 +355,7 @@ public class GUI_PanelHome extends javax.swing.JFrame {
 
     private void BtnVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerClientesActionPerformed
 
-        GUI_Clientes ventanaClientes = new GUI_Clientes();
+        GuiClientes ventanaClientes = new GuiClientes();
         ventanaClientes.setSize(780, 570);
         ventanaClientes.setLocation(30,60);
         
