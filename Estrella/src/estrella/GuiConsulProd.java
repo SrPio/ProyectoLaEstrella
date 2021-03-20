@@ -336,7 +336,7 @@ public class GuiConsulProd extends javax.swing.JFrame {
   * Metodo main, aqui se instancia el objeto de tipo ventanaConsulProdu para que
   * sea visible.
   **/
-  public static void main(String args[]) {
+  public static void main(String [] args) {
 
     GuiConsulProd ventanaConsulProdu = new GuiConsulProd();
     ventanaConsulProdu.setBounds(0, 0, 1050, 600);

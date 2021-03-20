@@ -423,7 +423,7 @@ public class GuiModiProducto extends javax.swing.JFrame {
     * Metodo main, aqui se instancia el objeto de tipo ventanaModiProd para que
     * sea visible.
     **/
-  public static void main(String args[]) {
+  public static void main(String [] args) {
 
     GuiModiProducto ventanaModiProd = new GuiModiProducto();
     ventanaModiProd.setBounds(0, 0, 1050, 600);
