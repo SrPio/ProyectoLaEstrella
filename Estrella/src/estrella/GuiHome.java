@@ -10,13 +10,13 @@ import static estrella.GuiAjustesN.PanelAjustN;
 import static estrella.GuiClientes.PanelClient;
 import static estrella.GuiCompraVenta.PanelCompraVenta;
 import static estrella.GuiConsulCliente.PanelConsulCliente;
-import static estrella.GUI_PanelHome.PanelCentralHome;
-import static estrella.GUI_Producto.PanelProduct;
-import static estrella.GUI_RegisCliente.PanelRegisClient;
-import static estrella.GUI_RegisCompra.PanelRegisComp;
-import static estrella.GUI_RegisVentaContado.PanelRegisVentContado;
-import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
-import static estrella.GUI_Reportes.PanelReportes;
+import static estrella.GuiPanelHome.PanelCentralHome;
+import static estrella.GuiProducto.PanelProduct;
+import static estrella.GuiRegisCliente.PanelRegisClient;
+import static estrella.GuiRegisCompra.PanelRegisComp;
+import static estrella.GuiRegisVentaContado.PanelRegisVentContado;
+import static estrella.GuiRegisVentaFiado.PanelRegisVentFia;
+import static estrella.GuiReportes.PanelReportes;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -517,7 +517,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void BtnVerProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerProductActionPerformed
 
-    GUI_Producto ventanaProd = new GUI_Producto();
+    GuiProducto ventanaProd = new GuiProducto();
     ventanaProd.setSize(780, 570);
     ventanaProd.setLocation(30, 60);
 
@@ -543,7 +543,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void HomeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBTNActionPerformed
 
-    GUI_PanelHome ventanaPanelHome = new GUI_PanelHome();
+    GuiPanelHome ventanaPanelHome = new GuiPanelHome();
     ventanaPanelHome.setSize(1050, 600);
     ventanaPanelHome.setLocation(0, 0);
 
@@ -574,7 +574,7 @@ public class GuiHome extends javax.swing.JFrame {
     if (seleccion == 0) {
       System.out.println("Contado");
 
-      GUI_RegisVentaContado ventanaRegisVentaContado = new GUI_RegisVentaContado();
+      GuiRegisVentaContado ventanaRegisVentaContado = new GuiRegisVentaContado();
       ventanaRegisVentaContado.setSize(780, 570);
       ventanaRegisVentaContado.setLocation(30, 60);
 
@@ -601,7 +601,7 @@ public class GuiHome extends javax.swing.JFrame {
       if (seleccion2 == 0) {
         System.out.println("Sí");
 
-        GUI_RegisVentaFiado ventanaRegisVenta = new GUI_RegisVentaFiado();
+        GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
         ventanaRegisVenta.setSize(780, 570);
         ventanaRegisVenta.setLocation(30, 60);
 
@@ -613,7 +613,7 @@ public class GuiHome extends javax.swing.JFrame {
       if (seleccion2 == 1) {
         System.out.println("No");
                 
-        GUI_RegisCliente ventanaRegisCliente = new GUI_RegisCliente();
+        GuiRegisCliente ventanaRegisCliente = new GuiRegisCliente();
         ventanaRegisCliente.setSize(780, 570);
         ventanaRegisCliente.setLocation(30, 60);
 
@@ -734,7 +734,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void InventarioBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventarioBTNActionPerformed
 
-    GUI_Producto ventanaProd = new GUI_Producto();
+    GuiProducto ventanaProd = new GuiProducto();
     ventanaProd.setSize(1050, 600);
     ventanaProd.setLocation(0, 0);
 
@@ -752,7 +752,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void ReportesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportesBTNActionPerformed
 
-    GUI_Reportes ventanaReportes = new GUI_Reportes();
+    GuiReportes ventanaReportes = new GuiReportes();
     ventanaReportes.setSize(1050, 600);
     ventanaReportes.setLocation(0, 0);
 
@@ -770,7 +770,7 @@ public class GuiHome extends javax.swing.JFrame {
     **/
     private void BtnRegisReporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisReporActionPerformed
 
-    GUI_Reportes ventanaReportes = new GUI_Reportes();
+    GuiReportes ventanaReportes = new GuiReportes();
     ventanaReportes.setSize(1050, 600);
     ventanaReportes.setLocation(0, 0);
 

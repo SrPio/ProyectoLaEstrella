@@ -6,9 +6,9 @@
 
 package estrella;
 
-import static estrella.GUI_RegisCliente.PanelRegisClient;
-import static estrella.GUI_RegisCompra.PanelRegisComp;
-import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
+import static estrella.GuiRegisCliente.PanelRegisClient;
+import static estrella.GuiRegisCompra.PanelRegisComp;
+import static estrella.GuiRegisVentaFiado.PanelRegisVentFia;
 
 import java.awt.BorderLayout;
 
@@ -137,7 +137,7 @@ public class GuiCompraVenta extends javax.swing.JFrame {
     **/
     private void BotonRegisCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegisCompraActionPerformed
 
-    GUI_RegisCompra ventanaRegisCompra = new GUI_RegisCompra();
+    GuiRegisCompra ventanaRegisCompra = new GuiRegisCompra();
     ventanaRegisCompra.setSize(1050, 600);
     ventanaRegisCompra.setLocation(0,0);
 
@@ -155,7 +155,7 @@ public class GuiCompraVenta extends javax.swing.JFrame {
     **/
     private void BotonRegisVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegisVentaActionPerformed
 
-    GUI_RegisVentaFiado ventanaRegisVenta = new GUI_RegisVentaFiado();
+    GuiRegisVentaFiado ventanaRegisVenta = new GuiRegisVentaFiado();
     ventanaRegisVenta.setSize(1050, 600);
     ventanaRegisVenta.setLocation(0,0);
 

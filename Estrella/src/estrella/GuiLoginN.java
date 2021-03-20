@@ -7,9 +7,9 @@
 package estrella;
 
 import static estrella.Conexion.getConection;
-import static estrella.GUI_PanelHome.PanelCentralHome;
-import static estrella.GUI_Producto.PanelProduct;
-import static estrella.GUI_RegisVentaFiado.PanelRegisVentFia;
+import static estrella.GuiPanelHome.PanelCentralHome;
+import static estrella.GuiProducto.PanelProduct;
+import static estrella.GuiRegisVentaFiado.PanelRegisVentFia;
 import static estrella.GuiClientes.PanelClient;
 
 import java.awt.BorderLayout;

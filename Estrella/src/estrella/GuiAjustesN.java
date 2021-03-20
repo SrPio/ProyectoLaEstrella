@@ -7,11 +7,11 @@
 package estrella;
 
 import static estrella.GuiConsulCliente.PanelConsulCliente;
-import static estrella.GUI_ConsulProd.PanelConsulPro;
+import static estrella.GuiConsulProd.PanelConsulPro;
 import static estrella.GuiModiCliente.PanelModifClient;
 import static estrella.GuiModifiLoginN.PanelModifiLogNuevoo;
-import static estrella.GUI_RegisCliente.PanelRegisClient;
-import static estrella.GUI_RegisProducto.PanelRegisPro;
+import static estrella.GuiRegisCliente.PanelRegisClient;
+import static estrella.GuiRegisProducto.PanelRegisPro;
 
 import java.awt.BorderLayout;
 
